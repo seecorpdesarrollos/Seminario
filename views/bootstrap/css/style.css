@@ -1,0 +1,37 @@
+.dropdown-menu{
+	background: #F64C24;
+}
+.dropdown-item{
+	color: #fff;
+	
+}
+.nav-item{
+	margin-left: 60px;
+}
+
+.nav-item:hover{
+	border-bottom:1px solid #65FB1C;
+
+}
+.soporte{
+	margin-left: 100%;
+}
+
+footer{
+	bottom: 0;
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    background-color: #868585;
+}
+@media screen and (max-width: 1000px) {
+	.soporte ,.usu{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	footer{
+		width: 100%;
+	}
+}
