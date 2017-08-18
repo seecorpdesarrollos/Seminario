@@ -1,1 +1,1 @@
-<?php header('location:portal/index.html')?>
+<?php header('location:portal/index')?>

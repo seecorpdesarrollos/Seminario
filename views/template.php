@@ -1,6 +1,6 @@
 
-	
-<?php require "views/modules/header/menu.php" ?>
+
+<?php require "views/modules/header/menu.php"?>
 
 
 <div class="row">
@@ -9,14 +9,14 @@
 			<section>
 			 <hr>
 				<?php
-					$mvc = new MvcController();
-					$mvc->enlacesPaginasController();
-				?>	
+$mvc = new MvcController();
+$mvc->enlacesPaginasController();
+?>
 			</section>
 		</div>
 	</div>
 </div>
 	<footer>
-		<?php include 'views/modules/header/footer.php' ?>
+		<?php include 'views/modules/header/footer.php';?>
 	</footer>
 

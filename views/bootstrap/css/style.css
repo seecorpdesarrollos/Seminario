@@ -1,37 +1,23 @@
-.dropdown-menu{
-	background: #F64C24;
-}
-.dropdown-item{
-	color: #fff;
-	
-}
-.nav-item{
-	margin-left: 60px;
+body {
+    overflow: hidden;
 }
 
-.nav-item:hover{
-	border-bottom:1px solid #65FB1C;
-
-}
-.soporte{
-	margin-left: 100%;
-}
-
-footer{
-	bottom: 0;
+footer {
+    bottom: 0;
     position: absolute;
-    width: 100%;
+    width: 110%;
     color: #fff;
     background-color: #868585;
 }
+
 @media screen and (max-width: 1000px) {
-	.soporte ,.usu{
-		display: none;
-	}
+    .soporte, .usu {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 800px) {
-	footer{
-		width: 100%;
-	}
+    footer {
+        width: 100%;
+    }
 }

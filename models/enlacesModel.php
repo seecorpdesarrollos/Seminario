@@ -6,15 +6,10 @@ class EnlacesPaginas
     public function enlacesPaginasModel($get)
     {
 
-        if ($get == "index" or $get == "" or $get == "") {
+        if ($get == "" or $get == "login" or $get == "") {
 
-            $module = "views/modules/" . $get . ".php";
+            $module = "views/modules/login/" . $get . ".php";
 
-            if ($get == "index") {
-
-                $module = "views/modules/index.php";
-
-            }
         } else {
 
             $module = "views/modules/login/login.php";
