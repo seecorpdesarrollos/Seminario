@@ -12,7 +12,7 @@ class EnlacesPaginas
 
         } else {
 
-            $module = "views/modules/login/login.php";
+            $module = "views/modules/index.php";
 
         }
 
