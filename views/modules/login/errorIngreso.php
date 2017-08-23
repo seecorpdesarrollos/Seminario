@@ -26,14 +26,14 @@
 		    <input type="password" class="form-control" id="passwordUser" name="passwordUser" placeholder="Contraseña " value="" >
 		  </div>
 
-		  <button type="submit" id="ingresar" name="ingresar" class="btn btn-outline-primary btn-block">Registrarse</button>
+		  <button type="submit" id="ingresar" name="ingresar" class="btn btn-primary btn-block">Registrarse</button>
 		</form>
 
 
 	</section>
   </div>
   <div class="card-footer text-muted">
-    ¿Nuevo en Memorium? <a href="login" class="btn btn-outline-danger btn-sm">Regístrate ahora</a>
+    ¿Nuevo en Memorium? <a href="login" class="btn btn-outline-primary btn-sm">Regístrate ahora</a>
   </div>
 </div>
 
