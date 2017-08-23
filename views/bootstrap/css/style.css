@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhaijaan');
 body {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .alert-white {
@@ -14,7 +14,7 @@ body {
 }
 
 .text-Inicio {
-    margin-left: 300px;
+    margin-left: 250px;
     font-family: 'Baloo Bhaijaan', cursive;
     display: inline-block;
 }
@@ -39,8 +39,8 @@ body {
 }
 
 .login {
-    margin-top: -47px;
-    margin-right: 70px;
+    margin-top: -40px;
+    margin-right: 37px;
 }
 
 .hrLogin {
@@ -55,16 +55,20 @@ body {
 
 .ingresoBtn {
     width: 280px;
-    margin-left: 50px;
+    margin-left: -8px;
 }
 
 .dropdown-menu {
     width: 400px;
-    margin-left: -140px;
+    margin-left: 2px;
     opacity: 0.8;
     background: #FF470E;
     padding: 15px;
     border: 1px solid #c9c9c9;
+}
+
+.input-group {
+    margin-left: -9px;
 }
 
 .principal {
@@ -78,6 +82,7 @@ body {
     border: 1px solid #c9c9c9c9;
     box-shadow: 0 0 18px #d0d0d0;
     background: #FFF;
+    width: 700px;
 }
 
 .form {
@@ -88,36 +93,55 @@ body {
 }
 
 .main {
-    margin: 30px 480px;
+    margin: 30px;
     font-family: monospace;
     font-size: 22px;
 }
 
 .head {
     width: 600px;
-    margin: -10px 400px;
     padding: 30px;
     opacity: 0.9;
     border: 2px solid #d0d0d0;
     box-shadow: 0 0 8px #d0d0d0;
 }
 
-footer {
-    bottom: 0;
-    position: absolute;
-    width: 110%;
-    color: #fff;
-    background-color: #181717;
-}
-
-@media screen and (max-width: 1000px) {
-    .soporte, .usu {
-        display: none;
+@media screen and (min-width: 800px) {
+    .navbar-nav, .memorium {
+        margin-left: 40%;
+    }
+    .head {
+        margin-left: 54%;
+    }
+    .main {
+        margin-left: 160px;
+    }
+    footer {
+        bottom: 0;
+        position: absolute;
+        width: 110%;
+        color: #fff;
+        background-color: #181717;
+    }
+    .heads {
+        margin-left: 28%;
+        width: 600px;
+        padding: 30px;
+        opacity: 0.9;
+        border: 2px solid #d0d0d0;
+        box-shadow: 0 0 8px #d0d0d0;
     }
 }
 
-@media screen and (max-width: 800px) {
-    footer {
+@media screen and (max-width: 700px) {
+    footer, .dropdown-menu, .head {
         width: 100%;
+    }
+    footer {
+        bottom: 0px;
+        position: absolute;
+        width: 110%;
+        color: #fff;
+        background-color: #181717;
     }
 }

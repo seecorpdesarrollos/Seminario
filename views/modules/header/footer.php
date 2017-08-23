@@ -8,6 +8,7 @@
         </nav>
     </div>
    <script src="views/bootstrap/js/jquery.min.js"></script>
+   <script src="views/bootstrap/js/tether.min.js"></script>
    <script src="views/bootstrap/js/bootstrap.min.js"></script>
    <script src="views/bootstrap/validate/dist/jquery.validate.js"></script>
    <script>
