@@ -1,5 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaijaan');
 body {
     overflow: hidden;
+}
+
+.alert-white {
+    border: 1px solid #d0d0d0;
+    box-shadow: 0 0 18px #d0d0d0;
+    width: 600px;
+    height: 90px;
+    margin: 10px 400px;
+    margin-top: 40px;
+    z-index: -1;
+}
+
+.text-Inicio {
+    margin-left: 300px;
+    font-family: 'Baloo Bhaijaan', cursive;
+    display: inline-block;
+}
+
+.inicio {
+    color: #7B7979;
+}
+
+.inicio:hover {
+    border-bottom: 2px inset #40A8F8;
+    color: #40A8F8;
+    border-top-width: medium;
+}
+
+.bg-white {
+    border-bottom: 1.5px solid #CBCACA;
+    height: 47px;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.login {
+    margin-top: -47px;
+    margin-right: 70px;
+}
+
+.hrLogin {
+    border: 1px solid #2750FF;
+    margin-top: -10px;
+}
+
+.input-group {
+    width: 280px;
+    margin: 10px 50px;
+}
+
+.ingresoBtn {
+    width: 280px;
+    margin-left: 50px;
+}
+
+.dropdown-menu {
+    width: 400px;
+    margin-left: -140px;
+    opacity: 0.8;
+    background: #FF470E;
+    padding: 15px;
+    border: 1px solid #c9c9c9;
+}
+
+.principal {
+    border: 1px solid #c9c9c9c9;
+    box-shadow: 0 0 18px #d0d0d0;
+    padding: 10px;
+    background: #D4EDFB;
+}
+
+.principal1 {
+    border: 1px solid #c9c9c9c9;
+    box-shadow: 0 0 18px #d0d0d0;
+    background: #FFF;
+}
+
+.form {
+    border: 1px solid #c9c9c9c9;
+    box-shadow: 0 0 18px #d0d0d0;
+    padding: 20px;
+    background: #FFF;
+}
+
+.main {
+    margin: 30px 480px;
+    font-family: monospace;
+    font-size: 22px;
+}
+
+.head {
+    width: 600px;
+    margin: -10px 400px;
+    padding: 30px;
+    opacity: 0.9;
+    border: 2px solid #d0d0d0;
+    box-shadow: 0 0 8px #d0d0d0;
 }
 
 footer {
@@ -7,7 +107,7 @@ footer {
     position: absolute;
     width: 110%;
     color: #fff;
-    background-color: #868585;
+    background-color: #181717;
 }
 
 @media screen and (max-width: 1000px) {

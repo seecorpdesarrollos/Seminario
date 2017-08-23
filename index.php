@@ -7,9 +7,13 @@
 #La versión require_once() funcionan de la misma forma que sus respectivo, salvo que, al utilizar la versión _once, se impide la carga de un mismo archivo más de una vez.
 
 #Si requerimos el mismo código más de una vez corremos el riesgo de redeclaraciones de variables, funciones o clases.
-
+// Controllers
 require_once "controllers/enlacesController.php";
+require_once "controllers/login/loginController.php";
+
+// Models
 require_once "models/enlacesModel.php";
+require_once "models/login/loginModel.php";
 
 $mvc = new MvcController();
 $mvc->plantilla();

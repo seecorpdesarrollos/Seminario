@@ -1,1 +1,1 @@
-<?php header('location:portal/index')?>
+<?php header('location:portal/memorium')?>

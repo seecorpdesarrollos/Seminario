@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
 });
 // PRELOADER JS
 $(window).load(function() {
-    $('.preloader').fadeOut(7000); // set duration in brackets    
+    $('.preloader').fadeOut(4000); // set duration in brackets    
 });
 // jQuery to collapse the navbar on scroll //
 $(window).scroll(function() {
