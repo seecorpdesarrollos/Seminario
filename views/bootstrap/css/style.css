@@ -3,6 +3,10 @@ body {
     overflow-x: hidden;
 }
 
+.body {
+    background: url(../image/Optimized-login.jpg);
+}
+
 .alert-white {
     border: 1px solid #d0d0d0;
     box-shadow: 0 0 18px #d0d0d0;
@@ -59,11 +63,11 @@ body {
 }
 
 .dropdown-menu {
-    width: 400px;
+    width: 320px;
     margin-left: 2px;
     opacity: 0.8;
-    background: #FF470E;
-    padding: 15px;
+    background: #333334;
+    padding: 5px;
     border: 1px solid #c9c9c9;
 }
 
@@ -75,12 +79,12 @@ body {
     border: 1px solid #c9c9c9c9;
     box-shadow: 0 0 18px #d0d0d0;
     padding: 10px;
-    background: #D4EDFB;
+    background: url(../image/fondo.jpg);
 }
 
 .principal1 {
     border: 1px solid #c9c9c9c9;
-    box-shadow: 0 0 18px #d0d0d0;
+    box-shadow: 0 0 18px red;
     background: #FFF;
     width: 700px;
 }
@@ -94,12 +98,13 @@ body {
 
 .main {
     margin: 30px;
+    margin-left: 30px;
     font-family: monospace;
     font-size: 22px;
 }
 
 .head {
-    width: 600px;
+    width: 650px;
     padding: 30px;
     opacity: 0.9;
     border: 2px solid #d0d0d0;
@@ -111,14 +116,14 @@ body {
         margin-left: 40%;
     }
     .head {
-        margin-left: 54%;
+        margin-left: 42%;
     }
     .main {
-        margin-left: 160px;
+        margin-left: 200px;
     }
     footer {
-        bottom: 0;
-        position: absolute;
+        bottom: -10px;
+        position: relative;
         width: 110%;
         color: #fff;
         background-color: #181717;

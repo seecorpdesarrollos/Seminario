@@ -1,12 +1,12 @@
-    <div class="container">
-          <nav class="navbar navbar-inverse">
+
+     <!--      <nav class="navbar navbar-inverse">
           <div class="container">
-            <cite>
+            <cite class="citeFooter">
                 Copy &copy todos los derechos reservados <?php echo date('Y') . ' '; ?> Alumnos 3° Año Isei
             </cite>
           </div>
-        </nav>
-    </div>
+        </nav> -->
+
    <script src="views/bootstrap/js/jquery.min.js"></script>
    <script src="views/bootstrap/js/tether.min.js"></script>
    <script src="views/bootstrap/js/bootstrap.min.js"></script>
