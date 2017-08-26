@@ -39,7 +39,9 @@
                                                 </span>
                                                 <input class="form-control" name="passwordUser" type="password" placeholder="Contraseña"/>
                                             </div>
-                                            <input type="submit" name="ingresar" class="btn btn-primary  ingresoBtn " value="Ingresar"/>
+                                        <?php if (!isset($_SESSION['nameUser'])): ?>
+                                            <?php include 'btn.php'?>
+                                        <?php endif?>
                                         </div>
                                     </form>
                                 </div>
@@ -87,7 +89,7 @@
                 <?php endif?>
             <section class="main">
                 <h4>
-                    Únete hoy a Mermorium.
+                    Únete hoy a Memorium.
                 </h4>
             </section>
         </div>

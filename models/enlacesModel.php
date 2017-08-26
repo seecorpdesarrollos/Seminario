@@ -16,7 +16,7 @@ class EnlacesPaginas
             $module = "views/modules/login/errorIngreso.php";
 
         } elseif ($get == 'principal') {
-            $module = "views/modules/principal/principal.php";
+            $module = "admin/principal.php";
         } else {
 
             $module = "views/modules/index.php";

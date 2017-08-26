@@ -15,6 +15,9 @@ class loginUsuarioCon
 
             if ($_POST['password'] != $_POST['password2']) {
                 header('location:errorPass');
+                if (empty($_POST['nombre'])) {
+                    echo "<span class='alert alert-danger'>El nombre es obligatorio.</span>";
+                }
             } else {
 
                 $respuesta = loginUsuario::registroUsuarioModel($datosController, 'user');
@@ -43,6 +46,8 @@ class loginUsuarioCon
 
                 session_start();
                 $_SESSION['nameUser'] = $respuesta['nameUser'];
+                $_SESSION['dateUser'] = $respuesta['dateUser'];
+                $dateUser = $_SESSION['dateUser'];
                 $_SESSION['emailUser'] = $respuesta['emailUser'];
 
                 header('location:principal');
