@@ -5,7 +5,7 @@
 <script src="views/bootstrap/validate/dist/jquery.validate.js"></script>
 <script src="views/bootstrap/js/jquery.cookie.js"> </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<script src="views/bootstrap/js/charts-home.js"></script>
+<!-- <script src="views/bootstrap/js/charts-home.js"></script> -->
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
 <!---->
 <script src="views/bootstrap/js/front.js"></script>

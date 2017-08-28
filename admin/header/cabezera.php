@@ -198,8 +198,8 @@
                     </li>
                     <!-- Logout    -->
                     <li class="nav-item">
-                        <a href="session" class="nav-link logout">
-                            Logout
+                        <a href="#" class="nav-link logout" data-toggle="modal" data-target="#sesion">
+                            Cerrar Sesión
                             <i class="fa fa-sign-out">
                             </i>
                         </a>

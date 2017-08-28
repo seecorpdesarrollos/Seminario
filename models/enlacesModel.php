@@ -17,6 +17,31 @@ class EnlacesPaginas
 
         } elseif ($get == 'principal') {
             $module = "admin/principal.php";
+
+        } elseif ($get == 'almaceSubir') {
+            $module = "admin/almacenaje/almaceSubir.php";
+
+        } elseif ($get == 'chat') {
+            $module = "admin/chat/chat.php";
+
+        } elseif ($get == 'almaceList') {
+            $module = "admin/almacenaje/almaceList.php";
+
+        } elseif ($get == 'recorList') {
+            $module = "admin/recordatorio/recorList.php";
+
+        } elseif ($get == 'recorSubir') {
+            $module = "admin/recordatorio/recorSubir.php";
+
+        } elseif ($get == 'temas') {
+            $module = "admin/enciclopedia/temas.php";
+
+        } elseif ($get == 'buscar') {
+            $module = "admin/enciclopedia/buscar.php";
+
+        } elseif ($get == 'wiki') {
+            $module = "admin/enciclopedia/wiki.php";
+
         } else {
 
             $module = "views/modules/index.php";

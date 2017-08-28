@@ -1,0 +1,29 @@
+/* your styles go here */
+
+.main-footer {
+    margin-top: 271px;
+}
+
+.page-header {
+    height: 62px;
+}
+
+.version {
+    margin-top: -22px;
+}
+
+.btnSalir {
+    width: 115px;
+    border: 1px solid #252AFC;
+    color: #252AFC;
+}
+
+.btnSalir:hover {
+    background: #252AFC;
+}
+
+@media (max-width: 700px) {
+    .version {
+        display: none;
+    }
+}

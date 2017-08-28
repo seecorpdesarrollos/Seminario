@@ -15,10 +15,10 @@
                     </div>
                     <!-- Sidebar Navidation Menus-->
                     <span class="heading  text-info">
-                        Principal
+                        Menú Principal
                     </span>
                     <ul class="list-unstyled">
-                        <li class="active">
+                        <li>
                             <a href="principal">
                                 <i class="icon-home  text-danger">
                                 </i>
@@ -28,16 +28,16 @@
                         <li>
                             <a href="#dashvariants" aria-expanded="false" data-toggle="collapse">
                                 <i class="fa fa-hdd-o text-danger" aria-hidden="true"></i>
-                                Amacenaje
+                                Almacenaje
                             </a>
                             <ul id="dashvariants" class="collapse list-unstyled">
                                 <li>
-                                    <a href="#">
+                                    <a href="almaceSubir">
                                        <i class="fa fa-cloud text-danger"></i> Subir
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="almaceList">
                                        <i class="fa fa-list-alt text-danger"></i> Listado
                                     </a>
                                 </li>
@@ -51,17 +51,17 @@
                             </a>
                             <ul id="wiki" class="collapse list-unstyled">
                                 <li>
-                                    <a href="#">
+                                    <a href="temas">
                                        <i class="fa fa-list-alt text-danger"></i> Temas
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="buscar">
                                        <i class="fa fa-search text-danger"></i> Buscar
                                     </a>
                                 </li>
                                  <li>
-                                    <a href="#">
+                                    <a href="wiki">
                                        <i class="fa fa-wikipedia-w text-danger"></i> Wikipedia
                                     </a>
                                 </li>
@@ -69,7 +69,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="chat">
                                 <i class="fa fa-comments-o text-danger">
                                 </i>
                                 Chat
@@ -82,12 +82,12 @@
                             </a>
                             <ul id="recordatorio" class="collapse list-unstyled">
                                 <li>
-                                    <a href="#">
+                                    <a href="recorSubir">
                                        <i class="fa fa-cloud text-danger"></i> Subir
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="recorList">
                                        <i class="fa fa-list-alt text-danger"></i> Listado
                                     </a>
                                 </li>
@@ -96,7 +96,7 @@
 
                     </ul>
                     <span class="heading text-info">
-                        Extras
+                       Menú Extras
                     </span>
                     <ul class="list-unstyled">
                          <li>

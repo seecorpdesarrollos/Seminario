@@ -10,13 +10,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="robots" content="all,follow"/>
         <!-- Bootstrap CSS-->
-        <link rel="stylesheet" href="admin/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="admin/assets/css/bootstrap.min.css"/>
         <!-- Google fonts - Roboto -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700"/>
         <!-- theme stylesheet-->
-        <link rel="stylesheet" href="admin/css/style.sea.css" id="theme-stylesheet"/>
+        <link rel="stylesheet" href="admin/assets/css/style.red.css"/>
         <!-- Custom stylesheet - for your changes-->
-        <link rel="stylesheet" href="admin/css/custom.css"/>
+        <link rel="stylesheet" href="admin/assets/css/custom.css"/>
         <!-- Favicon-->
         <link rel="shortcut icon" href="views/bootstrap/image/favicon.ico"/>
         <!-- Font Awesome CDN-->

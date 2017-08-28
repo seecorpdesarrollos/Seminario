@@ -26,6 +26,9 @@ if (!isset($_SESSION['emailUser'])) {
                     <header class="page-header">
                         <div class="container-fluid">
                             <h2 class="no-margin-bottom">
+                                Página  <small><i class="text-danger">Inicio</i></small>
+                            </h2>
+                            <h2 class="version float-lg-right">
                                 Memorium  <small><i class="text-danger">versión 1.0</i></small>
                             </h2>
                         </div>
@@ -140,36 +143,6 @@ if (!isset($_SESSION['emailUser'])) {
                     <!-- Dashboard Header Section    -->
 
 
-
-
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-
                     <!-- Page Footer-->
                     <footer class="main-footer">
                         <div class="container-fluid">
@@ -186,7 +159,6 @@ if (!isset($_SESSION['emailUser'])) {
                                             Diego Pennisi.
                                         </a>
                                     </p>
-                                    <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
                                 </div>
                             </div>
                         </div>
@@ -194,3 +166,4 @@ if (!isset($_SESSION['emailUser'])) {
                 </div>
             </div>
         </div>
+<?php include 'header/modal/modalSesion.php';?>
