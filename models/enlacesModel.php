@@ -6,7 +6,7 @@ class EnlacesPaginas
     public function enlacesPaginasModel($get)
     {
 
-        if ($get == "errorPass" or $get == "login" or $get == "okRegistro") {
+        if ($get == "errorPass" or $get == "login" or $get == "okRegistro" or $get == 'errorCamposVacio') {
 
             $module = "views/modules/login/login.php";
         } else if ($get == 'session') {
@@ -38,6 +38,12 @@ class EnlacesPaginas
 
         } elseif ($get == 'buscar') {
             $module = "admin/enciclopedia/buscar.php";
+
+        } elseif ($get == 'eliminarArchivo') {
+            $module = "admin/almacenaje/php/eliminarArchivo.php";
+
+        } elseif ($get == 'descargarArchivo') {
+            $module = "admin/almacenaje/php/descargarArchivo.php";
 
         } elseif ($get == 'wiki') {
             $module = "admin/enciclopedia/wiki.php";

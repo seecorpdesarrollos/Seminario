@@ -1,5 +1,15 @@
 /* your styles go here */
 
+.fa-sun-o {
+    color: #06FB17;
+    background: #06FB17;
+    border-radius: 18px;
+}
+
+.list-group {
+    width: 700px;
+}
+
 .main-footer {
     margin-top: 271px;
 }
@@ -22,8 +32,32 @@
     background: #252AFC;
 }
 
+.file {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    text-decoration: none;
+    background: #E1E0E0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.inputChat {
+    border: none;
+}
+
+.dialog {
+    display: none;
+}
+
 @media (max-width: 700px) {
     .version {
         display: none;
+    }
+    .list-group {
+        width: 100%;
     }
 }

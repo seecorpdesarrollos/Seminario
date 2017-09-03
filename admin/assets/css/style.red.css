@@ -2242,16 +2242,16 @@ a.btn.disabled, fieldset[disabled] a.btn {
 }
 
 .btn-outline-primary {
-    color: #ff3f3f;
+    color: #1109B4;
     background-image: none;
     background-color: transparent;
-    border-color: #ff3f3f;
+    border-color: #1109B4;
 }
 
 .btn-outline-primary:hover {
     color: #fff;
-    background-color: #ff3f3f;
-    border-color: #ff3f3f;
+    background-color: #2D23F7;
+    border-color: #2D23F7;
 }
 
 .btn-outline-primary:focus, .btn-outline-primary.focus {

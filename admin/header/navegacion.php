@@ -11,6 +11,7 @@
                             <p>
                               <small class="text-success">Miembro desde <?php echo date("m-Y", strtotime($dateUser)); ?></small>
                             </p>
+                            <small><i class="fa fa-sun-o"></i> Conectado</small>
                         </div>
                     </div>
                     <!-- Sidebar Navidation Menus-->

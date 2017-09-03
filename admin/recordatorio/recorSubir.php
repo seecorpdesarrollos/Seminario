@@ -37,7 +37,10 @@ if (!isset($_SESSION['emailUser'])) {
                     <section class="dashboard-counts no-padding-bottom">
                         <div class="container-fluid">
                             <div class="row bg-white has-shadow">
-
+                             <!-- Aqui escrí tu codigo -->
+                           <!-- Aqui escrí tu codigo -->
+                           <!-- Aqui escrí tu codigo -->
+                           <!-- Aqui escrí tu codigo -->
                             </div>
                         </div>
                     </section>

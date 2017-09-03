@@ -11,10 +11,12 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
 // Controllers
 require_once "controllers/enlacesController.php";
 require_once "controllers/login/loginController.php";
+require_once "controllers/chat/chatController.php";
 
 // Models
 require_once "models/enlacesModel.php";
 require_once "models/login/loginModel.php";
+require_once "models/chat/chatModel.php";
 
 $mvc = new MvcController();
 $mvc->plantilla();

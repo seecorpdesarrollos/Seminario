@@ -1,34 +1,35 @@
 <?php
 
-class MvcController{
+class MvcController
+{
 
-	#LLAMADA A LA PLANTILLA
-	#----------------------------------------------
+    #LLAMADA A LA PLANTILLA
+    #----------------------------------------------
 
-	public function plantilla(){
+    public function plantilla()
+    {
 
-		#include() Se utiliza para invocar el archivo que contiene código html.
-		include "views/template.php";
-	}
+        #include() Se utiliza para invocar el archivo que contiene código html.
+        include "views/template.php";
+    }
 
-	#INTERACCIÓN DEL USUARIO
-	#----------------------------------------------
-	public function enlacesPaginasController(){
+    #INTERACCIÓN DEL USUARIO
+    #----------------------------------------------
+    public function enlacesPaginasController()
+    {
 
-		if(isset($_GET["action"])){
+        if (isset($_GET["action"])) {
 
-		  $enlacesController = $_GET["action"];
+            $enlacesController = $_GET["action"];
 
-		}else{
+        } else {
 
-		   $enlacesController = "index";
-			
-		}
-      // le pide al modelo y que conecte con :: al método y asi heredo la clase y sus metodos y atributos..
-		 $respuesta = EnlacesPaginas::enlacesPaginasModel($enlacesController);
-		 require $respuesta;
+            $enlacesController = "index";
 
-	}
+        }
+        // le pide al modelo y que conecte con :: al método y asi heredo la clase y sus metodos y atributos..
+        $respuesta = EnlacesPaginas::enlacesPaginasModel($enlacesController);
+        require $respuesta;
+
+    }
 }
-
-?>

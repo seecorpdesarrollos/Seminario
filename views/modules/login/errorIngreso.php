@@ -34,9 +34,12 @@
                 <div class="form-group">
                     <input type="password" class="form-control" id="passwordUser" name="passwordUser" placeholder="Contraseña " value=""/>
                 </div>
-                <button type="submit" id="ingresar" name="ingresar" class="btn btn-primary btn-block">
-                    Registrarse
-                </button>
+<?php $registro = new loginUsuarioCon;
+$registro->ingresoUsarioErrorController();
+?>
+                <?php if (!isset($_SESSION['emailUser'])): ?>
+                   <?php include 'btnError.php';?>
+                <?php endif?>
             </form>
         </section>
     </div>
@@ -47,6 +50,3 @@
         </a>
     </div>
 </div>
-<?php $registro = new loginUsuarioCon; $registro->
-ingresoUsarioController();
-?>

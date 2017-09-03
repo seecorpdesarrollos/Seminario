@@ -1,11 +1,12 @@
-<?php session_start();
+
+<?php
 if (!isset($_SESSION['emailUser'])) {
     header('location:login');
 } else {
     $name = ucwords($_SESSION['nameUser']);
     $email = $_SESSION['emailUser'];
     $dateUser = $_SESSION['dateUser'];
-
+    require 'php/listado.php';
 }
 
 ?>
@@ -37,7 +38,25 @@ if (!isset($_SESSION['emailUser'])) {
                     <section class="dashboard-counts no-padding-bottom">
                         <div class="container-fluid">
                             <div class="row bg-white has-shadow">
+                                    <table class="table table-bordered " id="tabla">
+                                        <thead class="bg-primary text-white">
+                                         <th class="text-lg-center">Nombre del Archivo</th>
+                                         <th class="text-lg-center">Archivo</th>
+                                         <th class="text-lg-center">Acciones</th>
+                                        </thead>
+                                            <tbody>
+                                            <?php foreach ($result as $key): ?>
+                                               <tr>
+                                                   <td align="center"><?php echo $key['nameStorage'] ?></td>
+                                                   <td align="center"><?php echo $key['storagePath'] ?></td>
+                                                   <td align="center">
+                                                   <a href="index.php?action=descargarArchivo&idStorage=<?php echo $key['idStorage'] ?>&storagePath=<?php echo $key['storagePath'] ?>"><i class="fa fa-download btn btn-success"  data-toggle="tooltip" data-placement="top" title="Descargar el Archivo"></i> </a>
+                                                   <a href="index.php?action=eliminarArchivo&idStorage=<?php echo $key['idStorage'] ?>&storagePath=<?php echo $key['storagePath'] ?> &nameStorage=<?php echo $key['nameStorage'] ?>"><i class="fa fa-trash btn btn-danger"  data-toggle="tooltip" data-placement="bottom" title="Eliminar el Archivo"></i></a></td>
+                                               </tr>
+                                            <?php endforeach?>
 
+                                            </tbody>
+                                    </table>
                             </div>
                         </div>
                     </section>

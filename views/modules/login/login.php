@@ -30,14 +30,15 @@
                                                     <i class="fa fa-envelope-o fa-fw">
                                                     </i>
                                                 </span>
-                                                <input class="form-control" type="text" placeholder="Correo del Usuario" autofocus="" name="emailUser"/>
+                                                <input class="form-control" type="text" placeholder="Correo del Usuario"  autofocus="" name="emailUser" required="" />
+                                                <span id="message"></span>
                                             </div>
                                             <div class="input-group">
                                                 <span class="input-group-addon">
                                                     <i class="fa fa-key fa-fw" aria-hidden="true">
                                                     </i>
                                                 </span>
-                                                <input class="form-control" name="passwordUser" type="password" placeholder="Contraseña"/>
+                                                <input class="form-control" name="passwordUser" type="password" placeholder="Contraseña" required="" />
                                             </div>
                                         <?php if (!isset($_SESSION['nameUser'])): ?>
                                             <?php include 'btn.php'?>
@@ -86,6 +87,21 @@
                     </center>
                 </div>
                 <?php endif?>
+                 <?php if ($_GET['action'] == 'errorCamposVacio'): ?>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">
+                            &times;
+                        </span>
+                    </button>
+                    <center>
+                        <strong>
+                            Lo sentimos!
+                        </strong>
+                        No pueden quedar ningun campo vacio.
+                    </center>
+                </div>
+                <?php endif?>
                 <?php endif?>
             <section class="main">
                 <h4>
@@ -99,17 +115,19 @@
         <div class="col-md-6 ">
             <section class="head">
                 <form method="post" id="formulario">
-                    <div class="form-group">
+                    <div class="form-group" id="nombreDiv">
                         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" autofocus=""/>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="form">
                         <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo Electrónico" value=""/>
+                        <span id="email"></span>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="passwordDiv">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña"/>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="password2Div">
                         <input type="password" class="form-control" id="password2" name="password2" placeholder="Repita su Contraseña"/>
+                         <span id="pass"></span>
                     </div>
                     <button type="submit" id="registro" name="registro" class="btn btn-primary btn-block">
                         Registrarse
