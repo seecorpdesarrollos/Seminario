@@ -2,7 +2,7 @@
 
 class Conexion
 {
-    public function conectar()
+    public static function conectar()
     {
         try {
             $conexion = new PDO('mysql:host=localhost;dbname=memorium', 'root', '');

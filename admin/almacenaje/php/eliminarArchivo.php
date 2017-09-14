@@ -24,3 +24,17 @@ if (isset($_GET['idStorage'])) {
 
     header('location:almaceList');
 }
+if (isset($_GET['idShare'])) {
+    $idShare = $_GET['idShare'];
+    $sharePath = $_GET['sharePath'];
+    $nameShare = $_GET['nameShare'];
+
+    $carpeta = $_SERVER['DOCUMENT_ROOT'] . "/Seminario/archivosSubidos/share/" . $nameShare;
+
+    unlink($carpeta);
+
+    $sql = Conexion::conectar()->prepare("DELETE FROM share WHERE idShare = :idShare");
+    $sql->execute(array(':idShare' => $idShare));
+
+    header('location:share');
+}

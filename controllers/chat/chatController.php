@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 
 class ChatController
 {
@@ -8,17 +9,31 @@ class ChatController
         $response = ChatModel::getChatModel('users', $email);
         return $response;
     }
+    public static function getChatControllerActivo()
+    {
+        $email = $_SESSION['emailUser'];
+        $response = ChatModel::getChatModelActivos('users', $email);
+        return $response;
+    }
+
+    public static function getChatMenssageControllerTu()
+    {
+
+        $response = ChatModel::getChatMessageModelTu('users');
+        return $response;
+    }
 
     public static function insertaMensaggeController($menssage)
     {
-        $email = $_SESSION['emailUser'];
-        $remitente = 'davidhnmunoz@gmail.com';
+        $emailUser = $_SESSION['emailUser'];
 
-        $respuesta = ChatModel::insertarChatModel($email, $menssage, $remitente);
-        return $respuesta;
+        $respuesta = ChatModel::insertarChatModel($emailUser, $menssage);
+
         if ($respuesta == 'success') {
+
             echo 1;
         } else {
+
             echo 0;
         }
     }

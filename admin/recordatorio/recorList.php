@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 if (!isset($_SESSION['emailUser'])) {
     header('location:login');
 } else {
@@ -11,7 +11,7 @@ if (!isset($_SESSION['emailUser'])) {
 ?>
 
    <?php include 'admin/header/head.php';?>
-    <body>
+
         <div class="page home-page">
             <!-- Main Navbar-->
         <?php include 'admin/header/cabezera.php';?>
@@ -71,3 +71,4 @@ if (!isset($_SESSION['emailUser'])) {
             </div>
         </div>
 <?php include 'admin/header/modal/modalSesion.php';?>
+<?php include 'admin/header/modal/desconectado.php';?>

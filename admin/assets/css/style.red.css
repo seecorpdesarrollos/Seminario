@@ -151,14 +151,15 @@ button, input {
     padding: 20px;
 }
 
-.breadcrumb {
-    background: #fff;
+
+/*.breadcrumb {
+    background: #A3E2D2;
     position: relative;
     z-index: 50;
     border-radius: 0;
     padding: 15px 0;
     margin-bottom: 0;
-}
+}*/
 
 .breadcrumb li.breadcrumb-item {
     color: #aaa;

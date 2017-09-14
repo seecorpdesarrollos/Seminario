@@ -1,0 +1,86 @@
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.chat {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    border: 2px solid #d0d0d0;
+    box-shadow: 0 0 18px #d0d0d0;
+}
+
+.chat li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.hora {
+    border-bottom: 1px dotted #8B8A8A;
+}
+
+.emisor {
+    margin: 3px;
+    padding: 5px;
+}
+
+.input {
+    border: 0px;
+}
+
+.text-muted {
+    margin: 12px;
+}
+
+.chat li.left .chat-body {
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body {
+    margin-right: 60px;
+}
+
+.chat li .chat-body p {
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon {
+    margin-right: 5px;
+}
+
+.body-panel {
+    /* overflow-y: auto;
+    height: 220px;*/
+    margin: 10px;
+}
+
+li {
+    list-style: none;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #443A39;
+}
+
+.panel {
+    margin: 3px;
+}
+
+#chats {
+    height: 250px;
+    overflow: auto;
+}

@@ -1,8 +1,10 @@
 <?php
 
 require_once '../controllers/login/loginController.php';
+require_once '../controllers/chat/chatController.php';
 
 require_once '../models/login/loginModel.php';
+require_once '../models/chat/chatModel.php';
 
 require_once '../models/conexion.php';
 
@@ -11,7 +13,6 @@ class Ajax
 
     public $validarCorreo;
     public $menssage;
-    public $remitente;
 
     public function validarCorreoAjax()
     {
@@ -23,9 +24,8 @@ class Ajax
     public function menssageAjax()
     {
         $menssage = $this->menssage;
-        $remitente = $this->remitente;
 
-        $respuesta = ChatController::insertaMensaggeController($menssage, $remitente);
+        $respuesta = ChatController::insertaMensaggeController($menssage);
         echo $respuesta;
     }
 
@@ -39,6 +39,5 @@ if (isset($_POST['inputvalidarCorreo'])) {
 if (isset($_POST['mensageAjax'])) {
     $b = new Ajax();
     $b->menssage = $_POST['mensageAjax'];
-    $b->remitente = $_POST['remitenteAjax'];
     $b->menssageAjax();
 }

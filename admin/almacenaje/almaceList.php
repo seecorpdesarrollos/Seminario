@@ -3,10 +3,11 @@
 if (!isset($_SESSION['emailUser'])) {
     header('location:login');
 } else {
+    // require 'models/conexion.php';
     $name = ucwords($_SESSION['nameUser']);
     $email = $_SESSION['emailUser'];
     $dateUser = $_SESSION['dateUser'];
-    require 'php/listado.php';
+
 }
 
 ?>
@@ -44,6 +45,7 @@ if (!isset($_SESSION['emailUser'])) {
                                          <th class="text-lg-center">Archivo</th>
                                          <th class="text-lg-center">Acciones</th>
                                         </thead>
+                                        <?php $result = almacenController::getAlmacenController();?>
                                             <tbody>
                                             <?php foreach ($result as $key): ?>
                                                <tr>
@@ -87,3 +89,4 @@ if (!isset($_SESSION['emailUser'])) {
             </div>
         </div>
 <?php include 'admin/header/modal/modalSesion.php';?>
+<?php include 'admin/header/modal/desconectado.php';?>

@@ -1,9 +1,36 @@
 /* your styles go here */
 
+.list-group-item {
+    width: 250px;
+    margin: 0;
+}
+
 .fa-sun-o {
     color: #06FB17;
     background: #06FB17;
     border-radius: 18px;
+    cursor: pointer;
+}
+
+.subirArchivo {
+    margin-top: 50px;
+}
+
+.text {}
+
+.subir {
+    margin-top: 19px;
+}
+
+.su {
+    cursor: pointer;
+}
+
+.des {
+    color: #FC190E;
+    background: #FC190E;
+    border-radius: 18px;
+    cursor: pointer;
 }
 
 .list-group {
@@ -53,11 +80,15 @@ a:hover {
     display: none;
 }
 
+hr {
+    border: 1px solid #F57F30;
+}
+
 @media (max-width: 700px) {
     .version {
         display: none;
     }
-    .list-group {
+    .list-group, .list-group-item {
         width: 100%;
     }
 }

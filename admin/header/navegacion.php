@@ -2,16 +2,31 @@
                     <!-- Sidebar Header-->
                     <div class="sidebar-header d-flex align-items-center">
                         <div class="avatar">
-                            <img src="views/bootstrap/image/favicon.ico" alt="..." class="img-fluid rounded-circle"/>
+<?php
+$path = "archivosSubidos/$email/favicon.ico";
+echo "<img src='" . $path . "' alt='...'' class='img-fluid rounded-circle' width='48'/>";
+?>
                         </div>
                         <div class="title">
                             <h1 class="h4">
                                 <?php echo $name; ?>
                             </h1>
                             <p>
-                              <small class="text-success">Miembro desde <?php echo date("m-Y", strtotime($dateUser)); ?></small>
+<?php require_once 'models/conexion.php';
+$sql = Conexion::conectar()->prepare('SELECT estado FROM users WHERE emailUser=:emailUser');
+$sql->execute(array(':emailUser' => $email));
+$res = $sql->fetch();
+foreach ($res as $key) {
+}?>
+                              <small class="text-warning">Miembro desde <?php echo date("m-Y", strtotime($dateUser)); ?></small>
                             </p>
-                            <small><i class="fa fa-sun-o"></i> Conectado</small>
+                            <?php if ($key == 1): ?>
+                            <small><i class="fa fa-sun-o" data-toggle="modal"
+                             data-target="#desconectado"></i> Conectado</small>
+                         <?php else: ?>
+                            <small><i class="fa fa-sun-o des" data-toggle="modal"
+                             data-target="#desconectado"></i> Desconectado</small>
+                            <?php endif?>
                         </div>
                     </div>
                     <!-- Sidebar Navidation Menus-->
@@ -40,6 +55,11 @@
                                 <li>
                                     <a href="almaceList">
                                        <i class="fa fa-list-alt text-danger"></i> Listado
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="share">
+                                       <i class="fa fa-list-alt text-danger"></i> Compartir
                                     </a>
                                 </li>
 
@@ -107,12 +127,12 @@
                             </a>
                             <ul id="config" class="collapse list-unstyled">
                                 <li>
-                                    <a href="#">
+                                    <a href="passChange">
                                        <i class="fa fa-key text-danger"></i>Contraseña
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="perfil">
                                        <i class="fa fa-user text-danger"></i> Perfil
                                     </a>
                                 </li>

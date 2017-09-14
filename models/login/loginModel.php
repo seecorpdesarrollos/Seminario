@@ -6,6 +6,14 @@ class loginUsuario
     public static function registroUsuarioModel($datosModel, $tabla)
     {
         // require 'models/conexion.php';
+        $cons = Conexion::conectar()->prepare("SELECT emailUser FROM $tabla WHERE emailUser=:emailUser");
+        $email = $datosModel['correo'];
+        $cons->execute(array(':emailUser' => $email));
+        $res = $cons->fetch();
+
+        if ($res == true) {
+            return 'erroP';
+        }
 
         $sql = Conexion::conectar()->prepare("INSERT INTO $tabla(nameUser,emailUser,passwordUser)VALUES(:nombre,:email,:pass)");
 
@@ -15,8 +23,11 @@ class loginUsuario
 
         if ($sql->execute()) {
             return 'success';
+        } else {
+            return 'errorP';
         }
-        $sql->close();
+
+        // $sql->close();
 
     }
 

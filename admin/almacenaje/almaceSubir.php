@@ -104,3 +104,4 @@ if (!isset($_SESSION['emailUser'])) {header('location:login');} else { $name = u
         </div>
     </div>
     <?php include 'admin/header/modal/modalSesion.php';?>
+    <?php include 'admin/header/modal/desconectado.php';?>

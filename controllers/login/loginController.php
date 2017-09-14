@@ -17,7 +17,7 @@ class loginUsuarioCon
             $c = trim($_POST['password2']);
 
             if (empty($a) or empty($b) or empty($c)) {
-                // echo "<span class='alert alert-danger'>El nombre es obligatorio.</span>";
+
                 header('location:errorCamposVacio');
             } else {
 
@@ -27,14 +27,22 @@ class loginUsuarioCon
                 } else {
 
                     $respuesta = loginUsuario::registroUsuarioModel($datosController, 'users');
-
-                    if ($respuesta == 'success') {
-                        mkdir($_SERVER['DOCUMENT_ROOT'] . '/Seminario/archivosSubidos/' . $_POST['correo']);
-                        header('location:okRegistro');
+                    var_dump($respuesta);
+                    if ($respuesta == 'erroP') {
+                        header('location:errorEmail');
+                    } else {
+                        if ($respuesta == 'success') {
+                            mkdir($_SERVER['DOCUMENT_ROOT'] . '/Seminario/archivosSubidos/' . $_POST['correo']);
+                            $origen = 'views/bootstrap/image/favicon.ico';
+                            $destino = $_SERVER['DOCUMENT_ROOT'] . '/Seminario/archivosSubidos/' . $_POST["correo"];
+                            copy($origen, $destino . '/' . 'favicon.ico');
+                            header('location:okRegistro');
+                        }
                     }
                 }
             }
         }
+
     }
 
     public function ingresoUsarioController()
@@ -57,6 +65,7 @@ class loginUsuarioCon
                 $_SESSION['nameUser'] = $respuesta['nameUser'];
                 $_SESSION['dateUser'] = $respuesta['dateUser'];
                 $_SESSION['emailUser'] = $respuesta['emailUser'];
+                $_SESSION['id'] = $respuesta['id'];
 
                 header('location:principal');
             }
@@ -86,6 +95,7 @@ class loginUsuarioCon
                     $_SESSION['nameUser'] = $respuesta['nameUser'];
                     $_SESSION['dateUser'] = $respuesta['dateUser'];
                     $_SESSION['emailUser'] = $respuesta['emailUser'];
+                    $_SESSION['id'] = $respuesta['id'];
 
                     echo '<center><div class="alert alert-success"> Bienvenido <strong>' . ' ' . ucwords($respuesta['nameUser']) . '</strong></div>';
                     echo '<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>

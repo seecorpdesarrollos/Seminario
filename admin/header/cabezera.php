@@ -1,3 +1,4 @@
+
 <header class="header">
     <nav class="navbar">
         <!-- Search Box-->
@@ -54,7 +55,7 @@
                         <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
                             <i class="fa fa-bell-o">
                             </i>
-                            <span class="badge bg-red">
+                            <span class="badge bg-red" data-toggle="tooltip" data-placement="bottom" title="Recordatorios Pendientes de Estudios">
                                 12
                             </span>
                         </a>
@@ -132,16 +133,19 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- Messages                        -->
+                    <!-- Messages-->
                     <li class="nav-item dropdown">
                         <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
-                            <i class="fa fa-envelope-o">
-                            </i>
-                            <span class="badge bg-orange">
-                                10
+                            <i class="fa fa-universal-access" aria-hidden="true"></i>
+                            <span id="mensajeTotal" class="badge bg-orange" data-toggle="tooltip" data-placement="bottom" title="Usuarios Conectados.">
+                                <!-- se mostara total de mensaje -->
+    <?php $a = ChatController::getChatMenssageControllerTu();?>
+    <?php foreach ($a as $total): ?>
+    <?php endforeach?>
+    <?php echo $total; ?>
                             </span>
                         </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
+                        <!-- <ul aria-labelledby="notifications" class="dropdown-menu">
                             <li>
                                 <a rel="nofollow" href="#" class="dropdown-item d-flex">
                                     <div class="msg-profile">
@@ -194,11 +198,11 @@
                                     </strong>
                                 </a>
                             </li>
-                        </ul>
-                    </li>
+                        </ul> -->
+                    <!-- </li> -->
                     <!-- Logout    -->
-                    <li class="nav-item">
-                        <a href="#" class="nav-link logout" data-toggle="modal" data-target="#sesion">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Salir de la Aplicación">
+                        <a href="#" class="nav-link logout" data-toggle="modal" data-target="#sesion" >
                             Cerrar Sesión
                             <i class="fa fa-sign-out">
                             </i>

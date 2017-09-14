@@ -1,3 +1,4 @@
+
 <?php
 
 date_default_timezone_set('America/Argentina/Buenos_Aires');
@@ -12,11 +13,15 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
 require_once "controllers/enlacesController.php";
 require_once "controllers/login/loginController.php";
 require_once "controllers/chat/chatController.php";
+require_once "controllers/almacen/almacenController.php";
+require_once "controllers/config/configController.php";
 
 // Models
 require_once "models/enlacesModel.php";
 require_once "models/login/loginModel.php";
 require_once "models/chat/chatModel.php";
+require_once "models/almacen/almacenModel.php";
+require_once "models/config/configModel.php";
 
 $mvc = new MvcController();
 $mvc->plantilla();

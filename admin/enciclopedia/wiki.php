@@ -1,7 +1,9 @@
-<?php session_start();
+
+<?php
 if (!isset($_SESSION['emailUser'])) {
     header('location:login');
 } else {
+
     $name = ucwords($_SESSION['nameUser']);
     $email = $_SESSION['emailUser'];
     $dateUser = $_SESSION['dateUser'];
@@ -26,7 +28,7 @@ if (!isset($_SESSION['emailUser'])) {
                     <header class="page-header">
                         <div class="container-fluid">
                             <h2 class="no-margin-bottom">
-                                Página  <small><i class="text-danger">Enciclopedia Wiki</i></small>
+                                Página  <small><i class="text-danger">Wiki</i></small>
                             </h2>
                             <h2 class="version float-lg-right">
                                 Memorium  <small><i class="text-danger">versión 1.0</i></small>
@@ -68,3 +70,4 @@ if (!isset($_SESSION['emailUser'])) {
             </div>
         </div>
 <?php include 'admin/header/modal/modalSesion.php';?>
+<?php include 'admin/header/modal/desconectado.php';?>

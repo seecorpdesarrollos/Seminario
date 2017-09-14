@@ -6,7 +6,7 @@ class EnlacesPaginas
     public function enlacesPaginasModel($get)
     {
 
-        if ($get == "errorPass" or $get == "login" or $get == "okRegistro" or $get == 'errorCamposVacio') {
+        if ($get == "errorPass" or $get == "login" or $get == "okRegistro" or $get == 'errorCamposVacio' or $get == 'errorEmail') {
 
             $module = "views/modules/login/login.php";
         } else if ($get == 'session') {
@@ -24,8 +24,14 @@ class EnlacesPaginas
         } elseif ($get == 'chat') {
             $module = "admin/chat/chat.php";
 
+        } elseif ($get == 'totalMensaje') {
+            $module = "admin/chat/totalMensaje.php";
+
         } elseif ($get == 'almaceList') {
             $module = "admin/almacenaje/almaceList.php";
+
+        } elseif ($get == 'share') {
+            $module = "admin/almacenaje/share.php";
 
         } elseif ($get == 'recorList') {
             $module = "admin/recordatorio/recorList.php";
@@ -47,6 +53,18 @@ class EnlacesPaginas
 
         } elseif ($get == 'wiki') {
             $module = "admin/enciclopedia/wiki.php";
+
+        } elseif ($get == 'perfil' or $get == 'nombreVacio') {
+            $module = "admin/config/perfil.php";
+
+        } elseif ($get == 'passChange') {
+            $module = "admin/config/passChange.php";
+
+        } elseif ($get == 'errorPassChange') {
+            $module = "admin/config/passChange.php";
+
+        } elseif ($get == 'exitopassChange') {
+            $module = "admin/config/passChange.php";
 
         } else {
 

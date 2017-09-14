@@ -33,6 +33,23 @@
   }
 });
    });
+
+  $('#change').on('click', function(){
+     $("#formulario").validate({
+  rules: {
+
+    password:"required",
+    password2:"required",
+  },
+  messages: {
+
+    password: "<span class='text-danger'>La Contraseña es Obligatorio</span>",
+    password2: "<span class='text-danger'>La Contraseña repetida es Obligatorio</span>",
+  }
+});
+   });
+
+
        $('#ingresar').on('click', function(){
      $("#form").validate({
   rules: {

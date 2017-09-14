@@ -1,5 +1,5 @@
 <?php session_start();
-
+require_once 'models/conexion.php';
 if (!isset($_SESSION['emailUser'])) {
     header('location:login');
 } else {

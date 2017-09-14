@@ -3,6 +3,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 session_start();
 if (!isset($_SESSION['emailUser'])) {
+
     header('location:login');
 } else {
     $name = ucwords($_SESSION['nameUser']);
@@ -14,7 +15,6 @@ if (!isset($_SESSION['emailUser'])) {
 ?>
 
    <?php include 'header/head.php';?>
-    <body>
         <div class="page home-page">
             <!-- Main Navbar-->
         <?php include 'header/cabezera.php';?>
@@ -170,3 +170,4 @@ if (!isset($_SESSION['emailUser'])) {
             </div>
         </div>
 <?php include 'header/modal/modalSesion.php';?>
+<?php include 'header/modal/desconectado.php';?>
