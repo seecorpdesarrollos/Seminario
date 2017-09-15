@@ -148,7 +148,6 @@ echo 'Total de archivos subidos: ' . ' ' . $a;
 <div class="modal fade" id="exampleModal-modal-lg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-        <br><br>
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Descarga de archivos compartidos</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

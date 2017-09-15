@@ -1,4 +1,7 @@
-/*
+/*/*/
+
+*
+/*/*
 =========================================
 =========================================
 
@@ -18,6 +21,10 @@ https://bootstrapious.com/p/admin-template
 
 body {
     overflow-x: hidden;
+}
+
+.modal {
+    margin-top: 35px;
 }
 
 a, i, span {
@@ -2054,7 +2061,7 @@ STYLE SWITCHER FOR DEMO
 .btn {
     font-weight: normal;
     line-height: 1.25;
-    border: 1px solid transparent;
+    border: 1px solid;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border-radius: 0.25rem;
@@ -2074,7 +2081,8 @@ a.btn.disabled, fieldset[disabled] a.btn {
     pointer-events: none;
 }
 
-.btn-primary {
+
+/*.btn-primary {
     color: #fff;
     background-color: #ff3f3f;
     border-color: #ff3f3f;
@@ -2089,8 +2097,10 @@ a.btn.disabled, fieldset[disabled] a.btn {
 .btn-primary:focus, .btn-primary.focus {
     box-shadow: 0 0 0 2px rgba(255, 63, 63, 0.5);
 }
+*/
 
-.btn-primary.disabled, .btn-primary:disabled {
+
+/*.btn-primary.disabled, .btn-primary:disabled {
     background-color: #ff3f3f;
     border-color: #ff3f3f;
 }
@@ -2420,7 +2430,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;
     border-radius: 0.2rem;
-}
+}*/
 
 
 /*

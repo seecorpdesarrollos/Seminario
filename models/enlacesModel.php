@@ -33,7 +33,17 @@ class EnlacesPaginas
         } elseif ($get == 'share') {
             $module = "admin/almacenaje/share.php";
 
-        } elseif ($get == 'recorList') {
+        }
+        // enciclopedia
+
+        // elseif ($get == 'agregar') {
+        //     $module = "admin/enciclopedia/php/agregar_definicion.php";
+
+        // }
+
+        // Fin enciclopedia
+
+        elseif ($get == 'recorList') {
             $module = "admin/recordatorio/recorList.php";
 
         } elseif ($get == 'recorSubir') {

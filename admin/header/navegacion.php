@@ -21,11 +21,15 @@ foreach ($res as $key) {
                               <small class="text-warning">Miembro desde <?php echo date("m-Y", strtotime($dateUser)); ?></small>
                             </p>
                             <?php if ($key == 1): ?>
-                            <small><i class="fa fa-sun-o" data-toggle="modal"
-                             data-target="#desconectado"></i> Conectado</small>
+                        <small><i class="fa fa-sun-o" data-toggle="modal"
+                             data-target="#desconectado"></i>
+                             <span  data-toggle="modal"
+                             data-target="#desconectado" class="cursor" >Conectado</span>
+                         </small>
                          <?php else: ?>
                             <small><i class="fa fa-sun-o des" data-toggle="modal"
-                             data-target="#desconectado"></i> Desconectado</small>
+                             data-target="#desconectado"></i> <span class="cursor"data-toggle="modal"
+                             data-target="#desconectado" >Desconectado</span></small>
                             <?php endif?>
                         </div>
                     </div>

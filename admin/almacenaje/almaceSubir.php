@@ -37,10 +37,10 @@ if (!isset($_SESSION['emailUser'])) {header('location:login');} else { $name = u
                 <!-- Dashboard Counts Section-->
                 <section class="dashboard-counts no-padding-bottom">
                     <div class="container-fluid">
-                        <div class="row bg-white has-shadow">
+                        <div class="bg-white has-shadow">
                             <form method="post" action="admin/almacenaje/php/almacenSubir.php" enctype="multipart/form-data">
                                 <div class="row">
-                                    <div class="col-lg-6 col-sm-6">
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">
                                                 Nombre del archivo
@@ -51,23 +51,27 @@ if (!isset($_SESSION['emailUser'])) {header('location:login');} else { $name = u
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
                                         <div class="form-group">
-                                            <label for="exampleInputFile">
-                                                File input
+                                             <label for="exampleInputFile">
+                                                Elegir archivo
                                             </label>
-                                            <input type="file" name="storage" class="btn btn-outline-danger file"/>
+                                        <input type="file" name="storage" class="btn btn-outline-primary cursor file"/>
                                             <small id="fileHelp" class="form-text text-muted">
                                                 Recuerde que solo podrá subir achivos comprimidos rar o zip. Por Favor comprima sus archivos antes de subirlo a la nube.
                                             </small>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" name="subirArchivo" class="btn btn-outline-primary btn-block">
-                                    <i class="fa fa-files-o fa-spin">
-                                    </i>
-                                    Subir Archivo
-                                </button>
+                             <div class="row">
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button type="submit" name="subirArchivo" class="btn btn-outline-primary btn-block">
+                                       <i class="fa fa-files-o fa-spin">
+                                       </i>
+                                       Subir Archivo
+                                   </button>
+                               </div>
+                            </div>
                             </form>
                         </div>
                     </div>
