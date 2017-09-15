@@ -16,7 +16,7 @@
         <!-- Google fonts - Roboto -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700"/>
         <!-- theme stylesheet-->
-        <link rel="stylesheet" href="admin/assets/css/style.red.css"/>
+        <link rel="stylesheet" href="admin/assets/css/style.min.css"/>
         <link rel="stylesheet" href="admin/assets/css/dropzone.css"/>
         <link rel="stylesheet" href="admin/assets/css/basic.css"/>
         <!-- Custom stylesheet - for your changes-->
