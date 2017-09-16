@@ -15,6 +15,14 @@ class loginUsuarioCon
             $a = trim($_POST['nombre']);
             $b = trim($_POST['password']);
             $c = trim($_POST['password2']);
+            $correo = trim($_POST['correo']);
+
+            $punto = str_replace(".", " ", $correo);
+            $espacio = str_replace(" ", "", $punto);
+            $espacios = str_replace("com", ".com", $espacio);
+            if (preg_match("/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/", $espacios)) {
+                header('location:errorPass');
+            }
 
             if (empty($a) or empty($b) or empty($c)) {
 
@@ -26,7 +34,7 @@ class loginUsuarioCon
 
                 } else {
 
-                    $respuesta = loginUsuario::registroUsuarioModel($datosController, 'users');
+                    $respuesta = loginUsuario::registroUsuarioModel($datosController, $espacios, 'users');
                     var_dump($respuesta);
                     if ($respuesta == 'erroP') {
                         header('location:errorEmail');
@@ -112,8 +120,13 @@ class loginUsuarioCon
 
     public function validarCorreoController($validarCorreo)
     {
+
         $datosController = $validarCorreo;
-        $respuesta = loginUsuario::validarCorreoModel($datosController, 'users');
+        $punto = str_replace(".", " ", $datosController);
+        $espacio = str_replace(" ", "", $punto);
+        $espacios = str_replace("com", ".com", $espacio);
+
+        $respuesta = loginUsuario::validarCorreoModel($espacios, 'users');
 
         if ($respuesta) {
             echo 1;

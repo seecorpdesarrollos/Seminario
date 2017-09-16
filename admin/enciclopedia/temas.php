@@ -1,6 +1,49 @@
-<?php if (!isset($_SESSION['emailUser'])) {header('location:login');} else { $name = ucwords($_SESSION['nameUser']);
+<?php
+
+if (!isset($_SESSION['emailUser'])) {
+    header('location:login');
+} else {
+    $name = ucwords($_SESSION['nameUser']);
     $email = $_SESSION['emailUser'];
-    $dateUser = $_SESSION['dateUser'];require 'php/temasPhp.php';}?>
+    $dateUser = $_SESSION['dateUser'];
+    require 'php/temas.php';
+}
+
+if (isset($_POST['agregar'])) {
+
+    $email = $_SESSION['emailUser'];
+
+    $titulo = $_POST['titulo'];
+    $descripcion = $_POST['descripcion'];
+    $fecha = $_POST['fecha'];
+
+    if ($titulo == '') {
+        echo 'ingresar titulo';
+    } elseif ($descripcion == '') {
+        echo 'Ingresar Descripcion';
+    } else {
+        // /*Insert A Tabla usuario*/
+
+        $sql = $conexion->prepare('INSERT INTO themes (title, description,emailUser,dataTheme )
+         VALUES (:titulo,:descripcion,:emailUser,:fecha)');
+
+        if ($sql->execute(array(
+            ':titulo' => $titulo,
+            ':descripcion' => $descripcion,
+            ':emailUser' => $email,
+            ':fecha' => $fecha,
+        ))) {
+            header('location:exitoagregar');
+            'ok';
+        } else {
+
+            header('location:exitoagregar?mallllll');
+        }
+
+    }
+}
+
+?>
 <?php include 'admin/header/head.php';?>
 <body onload="mueveReloj()">
     <div class="page home-page">
@@ -39,15 +82,12 @@
                         <div class="bg-white has-shadow">
                             <div class="row">
 
-                            <div class="col-lg-7">
+                             <div class="col-lg-7">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item">
-                                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregar">
+                                       <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#agregar">
                                           <i class="fa fa-plus"></i>
                                         </button>
-                                        <a class="btn btn-primary active btn-sm" href="../principal/">
-                                            Home
-                                        </a>
                                         <a class="btn btn-outline-primary btn-sm" href="../buscar/">
                                             Buscar en la aplicación
                                         </a>
@@ -84,10 +124,10 @@
                             </div>
                             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-md-12">
                      <div class="card text-center">
-                        <div class="card-header">
-                            <h4 class="card-title">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="card-title ">
                                 Bienvenidos a Wiki
                             </h4>
                             <p class="card-text">
@@ -103,9 +143,10 @@
                         <?php echo $cantidad->cantidad; ?>
                     </p>
                     <?php endforeach;?>
-                    <div class="col-md-6 offset-3">
-                        <?php if (isset($_GET['exitoagregar'])) {echo ' <br/>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <div class="col-md-12 offset-3">
+                        <?php if (isset($_GET['action'])): ?>
+                            <?php if ($_GET['action'] == 'exitoagregar'): ?>
+                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">
                                     &times;
@@ -118,87 +159,19 @@
                             <i class="text-primary fa fa-thumbs-o-up" aria-hidden="true">
                             </i>
                         </div>
-                        ';
-    echo '<meta http-equiv="refresh" content="4;url=../principal/"/>';}?>
-                    </div>
-                    <div class="col-md-6 offset-3">
-                        <?php if (isset($_GET['exitomodificar'])) {echo ' <br/>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">
-                                    &times;
-                                </span>
-                            </button>
-                            <strong>
-                                Exitos!
-                            </strong>
-                            El tema fue modificado
-                            <i class="text-primary fa fa-thumbs-o-up" aria-hidden="true">
-                            </i>
-                        </div>
-                        ';
-    echo '<meta http-equiv="refresh" content="4;url=../principal/"/>';
-}?>
-                    </div>
-                    <div class="col-md-6 offset-3">
-                        <?php if (isset($_GET['exitoeliminar'])) {echo '  <br/>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">
-                                    &times;
-                                </span>
-                            </button>
-                            <strong>
-                                Exitos!
-                            </strong>
-                            El tema fue eliminado
-                            <i class="text-primary fa fa-thumbs-o-up" aria-hidden="true">
-                            </i>
-                        </div>
-                        ';
-    echo '<meta http-equiv="refresh" content="4;url=../principal/"/>';
-}?>
-                    </div>
-               <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div id="loader" class="text-center">
-                            <img src="../assets/img/loader.gif"/>
-                        </div>
-                        <div class="outer_div">
-                        </div>
+                            <?php endif?>
+                        <?php endif?>
+
                     </div>
                 </div>
-            </div>
-            <?php require 'admin/enciclopedia/php/agregar_definicion.php';?>
-            <script>
-                $(document).ready(function(){
-                  load(1);
-                });
-
-                function load(page){
-                  var parametros = {"action":"ajax","page":page};
-                  $("#loader").fadeIn('slow');
-                  $.ajax({
-                    url:'../paginacion/',
-                    data: parametros,
-                     beforeSend: function(objeto){
-                    $("#loader").html("<img src='../assets/img/loader.gif'>");
-                    },
-                    success:function(data){
-                      $(".outer_div").html(data).fadeIn('slow');
-                      $("#loader").html("");
-                    }
-                  })
-                }
-                </script>
-            <script>
-              $(function () {
-              $('[data-toggle="tooltip"]').tooltip()
-            })
-            </script>
-                                </div>
                             </div>
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-md-12" id="tabla">
+                      <?php include 'admin/enciclopedia/php/consultaPaginacion.php';?>
+                    </div>
+                </div>
                         </div>
                     </div>
                 </section>
@@ -247,10 +220,12 @@
                     </i>
                     Agregar Nueva definición
                 </h5>
-                <a class="btn " href="temas" > <i class="text-danger  fa fa-times-circle fa-2x " aria-hidden="true"></i></a>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="formulario">
+                <form action="" method="post" id="formulario">
                     <div class="form-group" id="form">
                         <label class="form-control-label" for="titulo">
                             Titulo:
@@ -272,8 +247,10 @@
                      <input readonly="" type="text"  name="fecha" class="form-control" value="<?php echo date("Y-m-d H:i:s"); ?>" >
                     </div>
                         <div class="modal-footer">
-                           <a class="btn btn-outline-danger" href="../principal/">Cerrar</a>
-                            <button class="btn btn-outline-success" id="button" name="agregar" type="submit">
+                           <button class="btn btn-outline-danger" type="button" data-dismiss="modal" aria-label="Close" >
+                                Cerrar
+                            </button>
+                            <button class="btn btn-outline-primary" id="button" name="agregar" type="submit">
                                 Agregar definición
                             </button>
                         </div>
@@ -302,8 +279,8 @@ $( "#formulario" ).validate({
   },
    messages:
     {
-        titulo: {required: 'El titulo es requerido'},
-        descripcion:{required: 'La descripcion es requerida'}
+        titulo: {required: 'Eltituloesrequerido'},
+        descripcion:{required: 'Ladescripcionesrequerida'}
     }
 
 
@@ -316,5 +293,5 @@ $( "#formulario" ).validate({
 
 </script>
 
-    <?php include 'admin/header/modal/modalSesion.php';?>
-    <?php include 'admin/header/modal/desconectado.php';?>
+    <?php include 'admin / header / modal / modalSesion . php';?>
+    <?php include 'admin / header / modal / desconectado . php';?>

@@ -1,5 +1,7 @@
 <?php
-require 'admin/enciclopedia/config/conexion.php';
+require '../../enciclopedia/config/conexion.php';
+// require_once 'admin/enciclopedia/config/conexion.php';
+
 if (isset($_POST['agregar'])) {
 
     $email = $_SESSION['emailUser'];
@@ -29,8 +31,6 @@ if (isset($_POST['agregar'])) {
 
         ));
 
-        header('location:../principal/?exitoagregar');
+        header('location:temas?exitoagregar');
     }
 }
-
-include 'admin/enciclopedia/definiciones/agregar_definicion.view.php';

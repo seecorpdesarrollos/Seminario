@@ -15,11 +15,14 @@ $result = $sql1->
     fetchAll();
 if (!empty($_POST['mensage'])) {
     $mensage = $_POST['mensage'];
+    $men = strip_tags($mensage);
+    $men = htmlspecialchars($men);
+    $men = trim($men);
     $sql = Conexion::conectar()->
         prepare("INSERT INTO messages (idEmisor,message) VALUES (:idEmisor,:mensage)");
     $sql->execute(array(
         ':idEmisor' => $idEmisor,
-        ':mensage' => $mensage));
+        ':mensage' => $men));
     echo " <audio autoplay> <source src='admin/assets/Beep.mp3' type='audio/mpeg'/> </audio> ";
 
     $sql1 = Conexion::conectar()->

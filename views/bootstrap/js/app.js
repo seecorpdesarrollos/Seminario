@@ -2,6 +2,8 @@
 correoExistente = true;
 $("#correo").change(function() {
     var correo = $('#correo').val();
+    var a = correo.indexOf('.');
+    console.log(a);
     var datos = new FormData();
     console.log(datos);
     // agregamos un nombre para pasa el datos.
@@ -19,16 +21,20 @@ $("#correo").change(function() {
                 $("#email").html('<p  class="alert alert-danger">El correo ya se encuentra registrado en la base de datos.</p>');
                 $('#form').addClass('has-danger');
                 $('#correo').addClass('form-control-danger');
-                $("#registro").attr('disabled', 'disabled');
+                // $("#registro").attr('disabled', 'disabled');
+                $("#registro").hide();
                 correoExistente = true;
+                console.log(respuesta);
             } else {
                 $("#form").removeClass('has-danger');
                 $("#form").addClass('has-success');
                 $("#correo").addClass('form-control form-control-success');
                 $("#email").html('');
-                $("#registro").removeAttr('disabled', 'disabled');
+                // $("#registro").removeAttr('disabled', 'disabled');
+                $("#registro").show();
                 correoExistente = false;
                 var passValidate = true;
+                console.log(respuesta);
                 $('#nombre').keyup(function() {
                     $("#nombreDiv").addClass('has-success');
                     $("#nombre").addClass('form-control form-control-success');

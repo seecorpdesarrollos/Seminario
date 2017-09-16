@@ -36,10 +36,13 @@ class EnlacesPaginas
         }
         // enciclopedia
 
-        // elseif ($get == 'agregar') {
-        //     $module = "admin/enciclopedia/php/agregar_definicion.php";
+        elseif ($get == 'exitoagregar') {
+            $module = "admin/enciclopedia/temas.php";
 
-        // }
+        } elseif ($get == 'temaIndividual') {
+            $module = "admin/enciclopedia/php/temaIndividual.php";
+
+        }
 
         // Fin enciclopedia
 

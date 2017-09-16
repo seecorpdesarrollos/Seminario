@@ -3,12 +3,16 @@
 // require 'models/conexion.php';
 class loginUsuario
 {
-    public static function registroUsuarioModel($datosModel, $tabla)
+    public static function registroUsuarioModel($datosModel, $espacios, $tabla)
     {
         // require 'models/conexion.php';
         $cons = Conexion::conectar()->prepare("SELECT emailUser FROM $tabla WHERE emailUser=:emailUser");
-        $email = $datosModel['correo'];
-        $cons->execute(array(':emailUser' => $email));
+        $email = $espacios;
+        $emails = filter_var($email, FILTER_VALIDATE_EMAIL);
+        if (!$emails) {
+            return 'erroP';
+        }
+        $cons->execute(array(':emailUser' => $emails));
         $res = $cons->fetch();
 
         if ($res == true) {

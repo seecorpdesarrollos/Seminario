@@ -146,7 +146,7 @@
                         </h3>
                         <hr/>
                         <p>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.
+                            Recibirás un email de la aplicación a la hora exacta que fue programado el recordatorio , para comenzar tu estudio.
                         </p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.9s">
@@ -157,15 +157,15 @@
                         </h3>
                         <hr/>
                         <p>
-                            Digital Team is free responsive Bootstrap v3.3.5 layout from
-                            <a rel="nofollow" href="#" target="_parent">
-                                Tooplate
-                            </a>
-                            . Images are from
-                            <a rel="nofollow" href="#" target="_parent">
-                                Pixabay
-                            </a>
-                            free photo website.
+                           Esta sección te brindara la posibilidad de poder
+
+                                Chatear con otros miembros
+
+                            . Y tambien
+
+                                Visualizar
+
+                            los mensajes individuales.
                         </p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="1s">
@@ -176,7 +176,7 @@
                         </h3>
                         <hr/>
                         <p>
-                            You can edit and use this template for your websites. Please tell your friends about Tooplate. Thank you for visiting our website.
+                            Podrás buscar lo que necesites en google desde  el buscador del memorium y te abrirá una pestaña  desde la aplicacion sin salir.
                         </p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="1s">
@@ -187,7 +187,9 @@
                         </h3>
                         <hr/>
                         <p>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.
+                            Esta adaptable para dispositivos móviles.
+                            Y proximamente podrás descargarte la app desde Play Store
+
                         </p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="1s">
@@ -198,11 +200,7 @@
                         </h3>
                         <hr/>
                         <p>
-                            You can easily change icons by looking at
-                            <a href="https://www.elegantthemes.com/blog/resources/how-to-use-and-embed-an-icon-font-on-your-website" target="_blank">
-                                ET Line Icons
-                            </a>
-                            . Excepteu sunt in culpa qui officia. Duis aute irure dolor in reprehenderit.
+                           Guardar o  compartir todo tipo de archivos comprimidos, con dos opciones: Personal o  Compartido.
                         </p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="1s">
@@ -213,7 +211,9 @@
                         </h3>
                         <hr/>
                         <p>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.
+                            Te permite crear temas de debates y punturlos.
+                            y la opcion de buscar en wikipedia o en él memorium,
+                             fasilitandote tu estudio.
                         </p>
                     </div>
                 </div>
@@ -238,9 +238,7 @@
                         <img src="images/isei.jpg" class="img-responsive" alt="about img"/>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <h3 class="bold">
-                            EQUIPO TÉCNICO
-                        </h3>
+
                         <h1 class="heading bold">
                             El mejor Instituto de informática en Rosario
                         </h1>
@@ -266,37 +264,35 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="design">
                                 <p>
-                                    Duis aute irure dolor in
-                                    <a href="#">
-                                        reprehenderit
-                                    </a>
-                                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sed id est tincidunt, iaculis nulla vel, sodales metus. Morbi interdum accumsan augue, in accumsan neque lacinia sed. Fusce cursus eu ligula ut gravida.
+                                  Cuenta con los mejores profesores del mercado. Ya que son profesionas
+                                  que trabajan en empresas privadas o estatales, desampeñando cargos de inportancia en sus areas.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.
+                                    <a href="#">
+                                      Entre los cuales se encuentran:
+                                    </a>
+                                 Pablo Blanch, Eduardo Cecchini, Carlos Contesti, Nidia Zing,
+                                 Bruno Di Camillo, Luciano Pecovich, Ricardo Cedaro, Juan Grinbandela
                                 </p>
+
                             </div>
                             <div role="tabpanel" class="tab-pane" id="mobile">
                                 <p>
-                                    Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    Esta es la segunda aplicacion de los alumnos de 3° año del isei. Baches Rosario, Memorium.
                                 </p>
                                 <p>
                                     <a href="#">
-                                        Duis aute irure dolor
+                                      Baches Rosario
                                     </a>
-                                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.
+                                   Ha ganado dos premios inportante tanto regional como provincial, y competirá a nivel nacional el próximo año.
                                 </p>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="social">
                                 <p>
-                                    Pellentesque elementum, lacus sit amet
-                                    <a href="#">
-                                        hendrerit
-                                    </a>
-                                    posuere, quam quam tristique nisi, nec ornare ligula magna id nisl. Donec blandit enim ac semper facilisis. Curabitur eu laoreet mauris, eget fermentum velit.
+                                   Director del instituti:  <a href="#">Floreal Otegui.</a>
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.
+                                    Contador, y profesor de la cátedra de sistemas contable  y nuestro project manager. De el emos aprendimo mucho desde lo profecional como en lo personal, estamos muy contento de tenerlo como director.
                                 </p>
                             </div>
                         </div>
@@ -321,7 +317,7 @@
                     </div>
                     <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.9s">
                         <div class="team-wrapper">
-                            <img src="images/diego.jpeg" class="img-responsive" alt="team img" height="200"/>
+                            <img src="images/diego.jpeg.png" class="img-responsive" alt="team img"/>
                             <div class="team-des">
                                 <h4>
                                     Diego Pennisi
@@ -349,13 +345,13 @@
                     </div>
                     <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="1.3s">
                         <div class="team-wrapper">
-                            <img src="images/team2.jpg" class="img-responsive" alt="team img"/>
+                            <img src="images/Original.png" class="img-responsive" alt="team img"/>
                             <div class="team-des">
                                 <h4>
-                                    Mary
+                                    David Muñoz
                                 </h4>
                                 <h3>
-                                    Core Developer
+                                    Desarrollador Web
                                 </h3>
                                 <hr/>
                                 <ul class="social-icon">
@@ -377,13 +373,13 @@
                     </div>
                     <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="1.6s">
                         <div class="team-wrapper">
-                            <img src="images/team3.jpg" class="img-responsive" alt="team img"/>
+                            <img src="images/photo.jpg" class="img-responsive" alt="team img"/>
                             <div class="team-des">
                                 <h4>
-                                    Linda
+                                    Emanuel Roca
                                 </h4>
                                 <h3>
-                                    Manager
+                                    Desarrollador Web
                                 </h3>
                                 <hr/>
                                 <ul class="social-icon">
@@ -405,13 +401,13 @@
                     </div>
                     <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="1.6s">
                         <div class="team-wrapper">
-                            <img src="images/team4.jpg" class="img-responsive" alt="team img"/>
+                            <img src="images/franco.jpg" class="img-responsive" alt="team img"/>
                             <div class="team-des">
                                 <h4>
-                                    Sandar
+                                    Franco Borgazzi
                                 </h4>
                                 <h3>
-                                    Accountant
+                                    Software Testing
                                 </h3>
                                 <hr/>
                                 <ul class="social-icon">
@@ -444,7 +440,7 @@
                                 04
                             </strong>
                             <h1 class="heading bold">
-                                CONTACT US
+                                CONTACTENOS
                             </h1>
                             <hr/>
                         </div>
@@ -454,7 +450,7 @@
                             INFORMACIÓN DE CONTACTO
                         </h2>
                         <p>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia deserunt mollit anim id.
+                           Si quieres recibir informacion sobre nuestro instituto o  bien sobre nuestras aplicaciones ponte en contacto , estaremos muy contento de poder ayudarte.
                         </p>
                         <div class="col-md-6 col-sm-4">
                             <h3>

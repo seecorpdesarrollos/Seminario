@@ -16,7 +16,9 @@
     margin-top: 50px;
 }
 
-.text {}
+#tabla {
+    margin-top: -130px;
+}
 
 .subir {
     margin-top: 19px;
@@ -84,11 +86,15 @@ hr {
     border: 1px solid #F57F30;
 }
 
+#a {
+    margin-top: -5px;
+}
+
 @media (max-width: 700px) {
     .version {
         display: none;
     }
-    .list-group, .list-group-item, .row, .file {
+    .list-group, .list-group-item, .row, .file, .table {
         width: 100%;
     }
 }

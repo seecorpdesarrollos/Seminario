@@ -16,6 +16,9 @@ if (isset($_GET['action'])) {
         and $_GET['action'] != 'perfil'
         and $_GET['action'] != 'nombreVacio'
         and $_GET['action'] != 'share'
+        and $_GET['action'] != 'exitoagregar'
+        and $_GET['action'] != 'temaIndividual'
+
     ) {
 
         require "views/modules/header/menu.php";

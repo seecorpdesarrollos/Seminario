@@ -22,13 +22,14 @@
         <!-- Custom stylesheet - for your changes-->
         <link rel="stylesheet" href="admin/assets/css/custom.css"/>
         <link rel="stylesheet" href="admin/assets/css/chat.css"/>
+        <link rel="stylesheet" href="admin/assets/css/font-awesome.css"/>
         <!-- Favicon-->
         <link rel="shortcut icon" href="views/bootstrap/image/favicon.ico"/>
         <!-- Font Awesome CDN-->
         <!-- you can replace it by local Font Awesome-->
-        <script src="https://use.fontawesome.com/99347ac47f.js"></script>
+        <!-- <script src="https://use.fontawesome.com/99347ac47f.js"></script> -->
         <!-- Font Icons CSS-->
-        <link rel="stylesheet" href="https://file.myfontastic.com/da58YPMQ7U5HY8Rb6UxkNf/icons.css"/>
+       <!--  <link rel="stylesheet" href="https://file.myfontastic.com/da58YPMQ7U5HY8Rb6UxkNf/icons.css"/> -->
         <script src="admin/assets/resources/jquery/jquery-2.1.4.min.js"></script>
         <script src="views/bootstrap/js/tether.min.js"></script>
         <script src="views/bootstrap/js/jquery-ui.min.js"> </script>
