@@ -1,48 +1,58 @@
 <?php
 require 'admin/enciclopedia/config/conexion.php';
-$emailUser = $_SESSION['emailUser'];
-if (isset($_GET['id'])) {
-    $id = (int) $_GET['id'];
-    $rtheme = $conexion->prepare("SELECT * FROM themes them JOIN users us ON them.emailUser=us.emailUser WHERE idTheme = ?");
-    $rtheme->execute(array($id));
-    $res = $rtheme->fetch();
-    // while ($theme = $rtheme->fetchObject()) {
-    //     $calculo = ($theme->point == 0) ? 0 : round(($theme->point / $theme->votes), 1);
+if (!isset($_SESSION['emailUser'])) {
+    header('location:login');
+} else {
+    $name = ucwords($_SESSION['nameUser']);
+    $emailUser = $_SESSION['emailUser'];
 
+    if (isset($_GET['id'])) {
+        $id = (int) $_GET['id'];
+        $rtheme = $conexion->prepare("SELECT * FROM themes them JOIN users us ON them.emailUser=us.emailUser WHERE idTheme = ?");
+        $rtheme->execute(array($id));
+        $res = $rtheme->fetch();
+
+    }
 }
 ?>
 
-  <?php $calculo = ($res['point'] == 0) ? 0 : round(($res['point'] / $res['votes']), 1);?>
-<!-- empieza tabla -->
-<table  class="table table-bordered table-sm table-responsive">
-    <thead class="thead-inverse">
-        <tr>
-            <th colspan="2">
-                <h2>
-                    <center>
-                        <?php echo $res['title']; ?>
-                    </center>
-                </h2>
-            </th>
-        </tr>
-        <tr>
-            <th class="align-top">
-                Descripción:
-            </th>
-            <td>
-                <?php echo $res['description']; ?>
-            </td>
-        </tr>
-        <tr>
-            <th class="align-top">
-                Valoracion:
-            </th>
-            <td>
-                <span class="ratingAverage" data-average=" <?php echo $calculo; ?> ">
+  <?php $calculo = ($res['points'] == 0) ? 0 : round(($res['points'] / $res['votes']), 1);?>
+
+  <div class="row id">
+      <div class="col-md-8">
+          <div class="card">
+              <div class="card-header  text-center">
+                  <h4 class="card-title">Título:</h4>
+                  <span class="text-danger"><?php echo ucwords($res['title']); ?></span>
+
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">Descripción:</h4>
+                <p class="card-text"> <?php echo $res['description']; ?></p>
+
+              </div>
+              <div class="card-footer text-muted text-center">
+                <span class="text-danger">Propietario:</span>
+                <?php echo ucwords($res['nameUser']) ?><br>
+                <span class="text-danger">Fecha:</span>
+                <?php echo date('d-m-Y H:i', strtotime($res['dataTheme'])); ?>
+              </div>
+          </div>
+          <a href="temas" class="btn btn-outline-primary btn-block top">
+       <i class="fa fa-fast-backward" aria-hidden="true"></i>
+    </a>
+
+      </div>
+      <div class="col-md-4">
+         <div class="card">
+          <div class="card-block">
+            <h3 class="card-title">Valoracion:</h3>
+            <p class="card-text">
+                 <span class="ratingAverage" data-average=" <?php echo $calculo; ?> ">
                 </span>
                 <span class="article" data-id=" <?php echo $id; ?> ">
                 </span>
-                <div data-toggle="tooltip" data-placement="bottom" title="Puntuar" class="barra">
+                  <div  class="barra">
                     <span class="bg">
                     </span>
                     <span class="stars">
@@ -52,120 +62,47 @@ if (isset($_GET['id'])) {
                             </span>
                         </span>
                         <?php endfor;
-echo ' </span>
-                    </div>
-                    <p class="votos">
-                        <span>
-                            ' . $res['votes'] . '
-                        </span>
-                        voto/s /Ranking: ' . $calculo . '
-                    </p>
-                    ';
-echo '
-                </span>
-            </div>
-            <strong>
-                <p class="yavoto text-danger">
-                    <span>
-                        ' . '
-                    </span>
-                </p>
-            </strong>
-            ';
-echo '
-        </span>
-    </div>
-    <strong>
-        <p class="gracias text-success">
-            <span>
-                ' . '
-            </span>
-        </p>
-    </strong>
-    ';
+echo ' </span></div><p class="votos"><span> </span>Cantidad de votos:' . ' ' . $res['votes'] . '<br>  Ranking: ' . $calculo . ' </p>';
+echo '</span></div><strong><p class="yavoto"><span id="ya">' . '</span> </p></strong>';
 ?>
-    <tr>
-        <span class="sucess">
-        </span>
-        <span class="fail">
-        </span>
-    </td>
-</tr>
-<th class="align-top">
-    Acción:
-</th>
-<td>
-    <a data-toggle="tooltip" data-placement="bottom" title="Modificar" href="../modificar/?idtema= <?php echo $res['idTheme'] ?> ">
-        <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true">
-        </i>
+                    </span>
+          <?php if ($res['emailUser'] == $emailUser): ?>
+   <a href="index.php?action=modificar&idtema=<?php echo $res['idTheme'] ?>" class="btn btn-outline-primary top">
+      <i class="fa fa-pencil-square-o fa-2x"></i>
     </a>
-    <a data-toggle="tooltip" data-placement="bottom" title="Eliminar"  href="../eliminar/?idtema= <?php echo $res['idTheme'] ?> ">
-        <i class="eliminar fa fa-trash fa-2x" aria-hidden="true">
-        </i>
+ <a  href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#eliminar">
+  <i class="fa fa-trash fa-2x"></i>
+</a>
+      <?php else: ?>
+         <div class="alert alert-danger" role="alert">
+             <strong>Lo sentimos!</strong> Usted no es el propietario.
+         </div>
+        <?php endif?>
+                </div>
+            </p>
+
+          </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Realmente desea eliminar la publicación?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success" data-dismiss="modal">Cancelar</button>
+        <a href="index.php?action=eliminar&idtemaE=<?php echo $res['idTheme'] ?>" class="btn btn-outline-danger">
+          Aceptar
     </a>
-</td>
-</tr>
-<th class="align-top">
-Propietario:
-</th>
-<td>
-<?php echo $res['nameUser'] ?>
-</td>
-</tr>
-<tr>
-<th>
-Creado:
-
-</th>
-<td>
-<?php echo $res['dataTheme']; ?>
-
-</td>
-</tr>
-</thead>
-</table>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-<script>
-  $(function() {
-    var average = $('.ratingAverage').attr('data-average');
-
-    function avaliacao(average) {
-        average = (Number(average) * 20);
-        $('.bg').css('width', 0);
-        $('.barra .bg').animate({
-            width: average + '%'
-        }, 500);
-    }
-    avaliacao(average);
-    $('.star').on('mouseover', function() {
-        var indexAtual = $('.star').index(this);
-        for (var i = 0; i <= indexAtual; i++) {
-            $('.star:eq(' + i + ')').addClass('full');
-        }
-    });
-    $('.star').on('mouseout', function() {
-        $('.star').removeClass('full');
-    });
-    $('.star').on('click', function() {
-        var idArticle = $('.article').attr('data-id');
-        var voto = $(this).attr('data-vote');
-        $.post('../php/votar.php', {
-            votar: 'sim',
-            artigo: idArticle,
-            ponto: voto
-        }, function(retorno) {
-            avaliacao(retorno.average);
-            $('.votos span').html(retorno.votos);
-            if ($('.yavoto span').length) {
-                $('.yavoto span').html(retorno.yavoto);
-                window.setTimeout('location.reload()', 2000);
-            }
-            if ($('.gracias span').length) {
-                $('.gracias span').html(retorno.gracias);
-                window.setTimeout('location.reload()', 2000);
-            }
-        }, 'jSON');
-    });
-});
-</script>

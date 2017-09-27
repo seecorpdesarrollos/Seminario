@@ -34,7 +34,7 @@ if (isset($_POST['agregar'])) {
             ':fecha' => $fecha,
         ))) {
             header('location:exitoagregar');
-            'ok';
+
         } else {
 
             header('location:exitoagregar?mallllll');
@@ -45,7 +45,8 @@ if (isset($_POST['agregar'])) {
 
 ?>
 <?php include 'admin/header/head.php';?>
-<body onload="mueveReloj()">
+ <script src="admin/assets/js/timer.js"></script>
+<body>
     <div class="page home-page">
         <!-- Main Navbar-->
         <?php include 'admin/header/cabezera.php';?>
@@ -81,92 +82,70 @@ if (isset($_POST['agregar'])) {
                     <div class="container-fluid">
                         <div class="bg-white has-shadow">
                             <div class="row">
+                                <div class="col-md-12">
+                                    <?php if (isset($_GET['action'])): ?>
+                                        <?php if ($_GET['action'] == 'exitoagregar'): ?>
+                                             <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">
+                                                &times;
+                                            </span>
+                                        </button>
+                                        <strong>
+                                            Exitos!
+                                        </strong>
+                                        El tema fue creado
+                                        <i class="text-primary fa fa-thumbs-o-up" aria-hidden="true">
+                                        </i>
+                                        <meta http-equiv="refresh" content="2;url=temas">
+                                    </div>
+                                        <?php endif?>
+                                        <?php if ($_GET['action'] == 'exitoDelete'): ?>
+                                             <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">
+                                                &times;
+                                            </span>
+                                        </button>
+                                        <strong>
+                                            Exitos!
+                                        </strong>
+                                        El tema fue borrado de la base de datos
+                                        <i class="text-primary fa fa-thumbs-o-up" aria-hidden="true">
+                                        </i>
+                                        <meta http-equiv="refresh" content="2;url=temas">
+                                    </div>
+                                        <?php endif?>
+                                    <?php endif?>
+
+                                </div>
 
                              <div class="col-lg-7">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item">
-                                       <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#agregar">
-                                          <i class="fa fa-plus"></i>
-                                        </button>
-                                        <a class="btn btn-outline-primary btn-sm" href="../buscar/">
-                                            Buscar en la aplicación
-                                        </a>
-                                        <a class="btn btn-outline-primary btn-sm" href="../busquedaweb/">
-                                            Buscar en Wikipedia
-                                        </a>
+                                       <center>
+                                           <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#agregar">
+                                              <i class="fa fa-plus"></i> Agregar temas nuevos
+                                            </button>
+                                       </center>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="col-lg-5">
-                                <form class="form-inline" name="form_reloj">
-                                    <input class="form-control w-25 p-2 text-white bg-inverse text-center" type="text" name="reloj" readonly="readonly" data-toggle="tooltip" data-placement="bottom" title="Hora"/>
-                                    <button type="button" class="btn btn-primary w-75 p-2   active" data-toggle="tooltip" data-placement="bottom" title="Fecha">
-                                        <span id="diaSemana" class="diaSemana">
-                                            &nbsp;
-                                        </span>
-                                        <span id="dia" class="dia">
-                                            &nbsp;
-                                        </span>
-                                        <span>
-                                            de
-                                        </span>
-                                        <span id="mes" class="mes">
-                                            &nbsp;
-                                        </span>
-                                        <span>
-                                            del
-                                        </span>
-                                        <span id="year" class="year">
-                                            &nbsp;
-                                        </span>
-                                    </button>
-                                </form>
                             </div>
                             </div>
             <div class="row">
                 <div class="col-md-12">
                      <div class="card text-center">
                         <div class="card-header bg-primary text-white">
-                            <h4 class="card-title ">
-                                Bienvenidos a Wiki
-                            </h4>
-                            <p class="card-text">
-                                En este sitio puede compartir y buscar contenido.
-                            </p>
-                        </div>
-                <div class="card-block">
                     <?php foreach ($rcantidad as $cantidad): ?>
-                    <p class="card-text">
-                        <strong>
-                            Cantidad de temas creados:
-                        </strong>
+                            <h4 class="card-title ">
+                               Cantidad de temas creados:
                         <?php echo $cantidad->cantidad; ?>
-                    </p>
                     <?php endforeach;?>
-                    <div class="col-md-12 offset-3">
-                        <?php if (isset($_GET['action'])): ?>
-                            <?php if ($_GET['action'] == 'exitoagregar'): ?>
-                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">
-                                    &times;
-                                </span>
-                            </button>
-                            <strong>
-                                Exitos!
-                            </strong>
-                            El tema fue creado
-                            <i class="text-primary fa fa-thumbs-o-up" aria-hidden="true">
-                            </i>
+                            </h4>
                         </div>
-                            <?php endif?>
-                        <?php endif?>
-
                     </div>
+                  </div>
                 </div>
-                            </div>
-                        </div>
-                    </div>
                 <div class="row">
                     <div class="col-md-12" id="tabla">
                       <?php include 'admin/enciclopedia/php/consultaPaginacion.php';?>
@@ -176,8 +155,6 @@ if (isset($_POST['agregar'])) {
                     </div>
                 </section>
                 <!-- Dashboard Header Section    -->
-                <script src="admin/enciclopedia/config/js/hora.js"></script>
-                <script src="admin/enciclopedia/config/js/fecha.js"></script>
                 <!-- Page Footer-->
                 <footer class="main-footer">
                     <div class="container-fluid">
@@ -208,6 +185,8 @@ if (isset($_POST['agregar'])) {
             </div>
         </div>
     </div>
+    <?php include 'admin/header/modal/modalSesion.php';?>
+    <?php include 'admin/header/modal/desconectado.php';?>
 
 
 
@@ -244,7 +223,7 @@ if (isset($_POST['agregar'])) {
                         </input>
                     </div>
                     <div class="form-group">
-                     <input readonly="" type="text"  name="fecha" class="form-control" value="<?php echo date("Y-m-d H:i:s"); ?>" >
+                     <input readonly="" type="hidden"  name="fecha" class="form-control" value="<?php echo date("Y-m-d H:i:s"); ?>" >
                     </div>
                         <div class="modal-footer">
                            <button class="btn btn-outline-danger" type="button" data-dismiss="modal" aria-label="Close" >
@@ -273,14 +252,15 @@ $( "#formulario" ).validate({
       required: true
     },
     descripcion: {
-      required: true}
+      required: true
+  }
 
 
   },
    messages:
     {
-        titulo: {required: 'Eltituloesrequerido'},
-        descripcion:{required: 'Ladescripcionesrequerida'}
+        titulo: {required: '<p class="text-danger">El titulo es requerido</p>'},
+        descripcion:{required: '<p class="text-danger">La descripcion es requerida</p>'}
     }
 
 
@@ -293,5 +273,3 @@ $( "#formulario" ).validate({
 
 </script>
 
-    <?php include 'admin / header / modal / modalSesion . php';?>
-    <?php include 'admin / header / modal / desconectado . php';?>

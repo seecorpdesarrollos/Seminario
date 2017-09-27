@@ -6,6 +6,7 @@
 
 ?>
 <?php include 'admin/header/head.php';?>
+ <script src="admin/assets/js/timer.js"></script>
 <script>
   $("#chats").animate({
                   scrollTop: 5000

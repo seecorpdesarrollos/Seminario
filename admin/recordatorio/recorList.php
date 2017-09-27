@@ -11,6 +11,7 @@ if (!isset($_SESSION['emailUser'])) {
 ?>
 
    <?php include 'admin/header/head.php';?>
+    <script src="admin/assets/js/timer.js"></script>
 
         <div class="page home-page">
             <!-- Main Navbar-->

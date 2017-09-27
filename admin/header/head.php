@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <title>
             Memorium Isei
@@ -11,6 +11,7 @@
         <meta name="robots" content="all,follow"/>
         <!-- Bootstrap CSS-->
         <link rel="stylesheet" href="admin/assets/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="admin/assets/dataTables/css/dataTables.bootstrap4.css"/>
          <link rel="stylesheet" href="admin/assets/resources/jquery-ui/jquery-ui.complete.min.css"/>
         <link rel="stylesheet" href="admin/assets/resources/jspanel/jquery.jspanel.css"/>
         <!-- Google fonts - Roboto -->
@@ -25,17 +26,16 @@
         <link rel="stylesheet" href="admin/assets/css/font-awesome.css"/>
         <!-- Favicon-->
         <link rel="shortcut icon" href="views/bootstrap/image/favicon.ico"/>
-        <!-- Font Awesome CDN-->
-        <!-- you can replace it by local Font Awesome-->
-        <!-- <script src="https://use.fontawesome.com/99347ac47f.js"></script> -->
-        <!-- Font Icons CSS-->
-       <!--  <link rel="stylesheet" href="https://file.myfontastic.com/da58YPMQ7U5HY8Rb6UxkNf/icons.css"/> -->
+
         <script src="admin/assets/resources/jquery/jquery-2.1.4.min.js"></script>
         <script src="views/bootstrap/js/tether.min.js"></script>
         <script src="views/bootstrap/js/jquery-ui.min.js"> </script>
         <script src="views/bootstrap/js/dropzone.js"></script>
+        <script src="admin/assets/js/app.js"></script>
+
+
+
 
 
 
     </head>
-<body>

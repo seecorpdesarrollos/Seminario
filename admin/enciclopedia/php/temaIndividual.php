@@ -11,7 +11,7 @@ if (!isset($_SESSION['emailUser'])) {
 ?>
 
    <?php include 'admin/header/head.php';?>
-
+<body>
         <div class="page home-page">
             <!-- Main Navbar-->
         <?php include 'admin/header/cabezera.php';?>
@@ -37,7 +37,7 @@ if (!isset($_SESSION['emailUser'])) {
                     <section class="dashboard-counts no-padding-bottom">
                         <div class="container-fluid">
                             <div class="row bg-white has-shadow">
-                            	<?php require 'admin/enciclopedia/php/tema.php';?>
+                                <?php require 'admin/enciclopedia/php/tema.php';?>
                            <!-- Aqui escrí tu codigo -->
                            <!-- Aqui escrí tu codigo -->
                            <!-- Aqui escrí tu codigo -->

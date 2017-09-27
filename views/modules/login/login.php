@@ -3,9 +3,9 @@
             <i class="fa fa-dedent">
             </i>
         </button>
-        <a class="navbar-brand  memorium" href="memorium">
+        <a class="navbar-brand  memorium" href="recover">
             <img src="views/bootstrap/image/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt=""/>
-            Memorium
+            ¿Te olvidaste la contraseña?
         </a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
@@ -19,9 +19,9 @@
                     <?php if (!isset($_SESSION['emailUser'])): ?>
                         <?php require 'login.Modal.php';?>
                     <?php else: ?>
+                    <!-- Sesion iniciada -->
                         <?php require 'sesionModal.php';?>
                     <?php endif?>
-                    <!-- Sesion iniciada -->
                 </li>
             </ul>
         </div>
@@ -39,9 +39,10 @@
                             Felicidades!
                         </strong>
                         Uds se ha sido registrado con exito.
-                        <strong>
-                            Ya puede iniciar sesión!
+                        <strong><br>
+                            Por favor verifique su correo, que le hemos enviado un código de activacion!
                         </strong>
+                         <meta http-equiv="refresh" content="2; url=validarIngreso">
                     </div>
                 </center>
                 <?php endif?>
@@ -56,7 +57,7 @@
                         <strong>
                             Lo sentimos!
                         </strong>
-                        Las contraseñas ingresadas no coinciden.
+                        Las contraseñas ingresadas o el código no coinciden.
                     </center>
                 </div>
                 <?php endif?>
@@ -94,6 +95,7 @@
             <section class="main">
                 <h4>
                     Únete hoy a Memorium.
+
                 </h4>
             </section>
         </div>
@@ -116,6 +118,12 @@
                     <div class="form-group" id="password2Div">
                         <input type="password" class="form-control" id="password2" name="password2" placeholder="Repita su Contraseña"/>
                          <span id="pass"></span>
+                    </div>
+                    <div class="form-group" id="codigoDiv">
+                        <input type="text" class="form-control cod" id="codigo" name="codigo" placeholder="Código"/>
+                        <?php $ran = rand(1000, 100000);?>
+                         <center><span id="rand"><?php echo $ran; ?></span></center>
+                         <input type="hidden" name="codigo1" value="<?php echo $ran; ?>">
                     </div>
                     <button type="submit" id="registro" name="registro" class="btn btn-primary btn-block">
                         Registrarse

@@ -40,7 +40,7 @@ foreach ($res as $key) {
                     <ul class="list-unstyled">
                         <li>
                             <a href="principal">
-                                <i class="icon-home  text-danger">
+                                <i class="fa fa-home  text-danger">
                                 </i>
                                 Inicio
                             </a>

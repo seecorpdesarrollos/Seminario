@@ -18,6 +18,8 @@ if (isset($_GET['action'])) {
         and $_GET['action'] != 'share'
         and $_GET['action'] != 'exitoagregar'
         and $_GET['action'] != 'temaIndividual'
+        and $_GET['action'] != 'modificar'
+        and $_GET['action'] != 'exitoDelete'
 
     ) {
 

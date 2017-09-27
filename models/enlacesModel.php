@@ -6,14 +6,29 @@ class EnlacesPaginas
     public function enlacesPaginasModel($get)
     {
 
-        if ($get == "errorPass" or $get == "login" or $get == "okRegistro" or $get == 'errorCamposVacio' or $get == 'errorEmail') {
+        if ($get == "errorPass" or $get == "login" or $get == "okRegistro" or $get == 'errorCamposVacio' or $get == 'errorEmail' or $get == 'errorCaptcha') {
 
             $module = "views/modules/login/login.php";
         } else if ($get == 'session') {
             $module = "views/modules/login/session.php";
 
+        } else if ($get == 'sessionTime') {
+            $module = "views/modules/login/sessionTime.php";
+
+        } else if ($get == 'recover' or $get == 'noEmail') {
+            $module = "views/modules/login/recover.php";
+
+        } else if ($get == 'recoverPass') {
+            $module = "views/modules/login/recoverPass.php";
+
         } else if ($get == 'errorIngreso') {
             $module = "views/modules/login/errorIngreso.php";
+
+        } else if ($get == 'ingresoTime') {
+            $module = "views/modules/login/ingresoTime.php";
+
+        } else if ($get == 'validarIngreso' or $get == 'validarIngresoError') {
+            $module = "views/modules/login/validarIngreso.php";
 
         } elseif ($get == 'principal') {
             $module = "admin/principal.php";
@@ -36,11 +51,20 @@ class EnlacesPaginas
         }
         // enciclopedia
 
-        elseif ($get == 'exitoagregar') {
+        elseif ($get == 'exitoagregar' or $get == 'exitoDelete') {
             $module = "admin/enciclopedia/temas.php";
 
         } elseif ($get == 'temaIndividual') {
             $module = "admin/enciclopedia/php/temaIndividual.php";
+
+        } elseif ($get == 'votar') {
+            $module = "admin/enciclopedia/php/votar.php";
+
+        } elseif ($get == 'modificar') {
+            $module = "admin/enciclopedia/php/modificar.php";
+
+        } elseif ($get == 'eliminar') {
+            $module = "admin/enciclopedia/php/eliminar.php";
 
         }
 

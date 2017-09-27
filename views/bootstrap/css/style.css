@@ -64,7 +64,7 @@ body {
 
 .dropdown-menu {
     width: 320px;
-    margin-left: 2px;
+    margin-left: -1px;
     opacity: 0.8;
     background: #333334;
     padding: 5px;
@@ -103,12 +103,26 @@ body {
     font-size: 22px;
 }
 
+.validar {
+    margin-left: 50px;
+}
+
 .head {
     width: 650px;
     padding: 30px;
     opacity: 0.9;
     border: 2px solid #d0d0d0;
     box-shadow: 0 0 8px #d0d0d0;
+}
+
+.codigo {
+    margin-left: 40%;
+    width: 75px;
+}
+
+.cod {
+    margin-left: 43%;
+    width: 80px;
 }
 
 @media screen and (min-width: 800px) {

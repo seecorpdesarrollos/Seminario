@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="css/style.css"/>
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'/>
     </head>
-    <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+    <body data-spy="scroll" data-target=".navbar-collapse" data-offset="5">
         <!-- seccion de precarga-->
         <div class="preloader">
             <div class="sk-spinner sk-spinner-circle">

@@ -18,24 +18,32 @@ $(function() {
     $('.star').on('mouseout', function() {
         $('.star').removeClass('full');
     });
-    $('.star').on('click', function() {
-        var idArticle = $('.article').attr('data-id');
-        var voto = $(this).attr('data-vote');
-        $.post('../php/votar.php', {
-            votar: 'sim',
-            artigo: idArticle,
-            ponto: voto
-        }, function(retorno) {
-            avaliacao(retorno.average);
-            $('.votos span').html(retorno.votos);
-            if ($('.yavoto span').length) {
-                $('.yavoto span').html(retorno.yavoto);
+});
+$('.star').on('click', function() {
+    var idArticle = $('.article').attr('data-id');
+    var voto = $(this).attr('data-vote');
+    datos = {
+        votars: 'sim',
+        tema: idArticle,
+        punto: voto,
+    };
+    // console.log(datos);
+    $.ajax({
+        url: 'votar',
+        method: "POST",
+        data: datos,
+        success: function(respuesta) {
+            // JSON.parse(respuesta);length
+            console.log(Object.keys(respuesta));
+            var i = Object.keys(respuesta)
+            if (i.length != 847) {
+                $('.yavoto').html('<p class="text-danger">Usted ya votó. Solamente puede votar una vez.</p>');
+                // console.log(i);
+                window.setTimeout('location.reload()', 2000);
+            } else if (i.length == 847) {
+                $('.yavoto').html('<p class="text-success">Gracias por votar!</p>');
                 window.setTimeout('location.reload()', 2000);
             }
-            if ($('.gracias span').length) {
-                $('.gracias span').html(retorno.gracias);
-                window.setTimeout('location.reload()', 2000);
-            }
-        }, 'jSON');
+        }
     });
 });

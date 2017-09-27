@@ -22,6 +22,7 @@ if (isset($_POST['cambiarNombre'])) {
 }
 
 ?>
+ <script src="admin/assets/js/timer.js"></script>
 <body>
     <div class="page home-page">
         <!-- Main Navbar-->

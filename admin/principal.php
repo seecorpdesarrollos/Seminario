@@ -13,8 +13,18 @@ if (!isset($_SESSION['emailUser'])) {
 }
 
 ?>
-
    <?php include 'header/head.php';?>
+ <script src="admin/assets/js/timer.js"></script>
+<script type="text/javascript">
+var n = 0;
+window.setInterval(function(){
+
+  n++;
+
+  console.log(n);
+},1000);
+</script>
+   <body>
         <div class="page home-page">
             <!-- Main Navbar-->
         <?php include 'header/cabezera.php';?>
@@ -136,6 +146,7 @@ if (!isset($_SESSION['emailUser'])) {
                                         <div class="number">
                                             <strong>
                                                 35
+                            <div id="number"></div>
                                             </strong>
                                         </div>
                                     </div>

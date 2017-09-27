@@ -4,23 +4,25 @@
             <img class="rounded" src="views/bootstrap/image/favicon.ico" width="25"/>
             Inicio
         </span>
+         <span class="inicio validar">
+            Verifica tu casilla de email para copiarv el codigo de verificacion.
+        </span>
     </a>
 </nav>
 <br/>
 <div class="card text-center">
     <div class="card-header">
         <?php if (isset($_GET['action'])): ?>
-        <?php if ($_GET['action'] == 'errorIngreso'): ?>
+        <?php if ($_GET['action'] == 'validarIngresoError'): ?>
         <div class="alert alert-danger fade show" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">
                     &times;
                 </span>
             </button>
-            El correo electrónico y la contraseña que ingresaste no coinciden con nuestros registros. Por favor, revisa e inténtalo de nuevo..
+            El correo electrónico o la contraseña o el código que ingresaste no coinciden con nuestros registros. Por favor, revisa e inténtalo de nuevo..
         </div>
         <?php endif?>
-
         <?php endif?>
     </div>
     <div class="card-block">
@@ -35,8 +37,11 @@
                 <div class="form-group">
                     <input type="password" class="form-control" id="passwordUser" name="passwordUser" placeholder="Contraseña " value=""/>
                 </div>
-<?php $registro = new loginUsuarioCon;
-$registro->ingresoUsarioErrorController();
+                  <div class="form-group">
+                    <input type="text" class="form-control codigo" id="codigo" name="codigo" placeholder="código" />
+                </div>
+<?php $registros = new loginUsuarioCon;
+$registros->ingresoUsarioCodigoController();
 ?>
                 <?php if (!isset($_SESSION['emailUser'])): ?>
                    <?php include 'btnError.php';?>

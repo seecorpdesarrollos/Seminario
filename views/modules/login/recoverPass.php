@@ -10,14 +10,14 @@
 <div class="card text-center">
     <div class="card-header">
         <?php if (isset($_GET['action'])): ?>
-        <?php if ($_GET['action'] == 'errorIngreso'): ?>
-        <div class="alert alert-danger fade show" role="alert">
+        <?php if ($_GET['action'] == 'recoverPass'): ?>
+        <div class="alert alert-success fade show" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">
                     &times;
                 </span>
             </button>
-            El correo electrónico y la contraseña que ingresaste no coinciden con nuestros registros. Por favor, revisa e inténtalo de nuevo..
+           Su contraseña fue recuperada. Por favor revisa tu correo e ingresa con el codigo, luego cambie su contraseña desde la aplicación.
         </div>
         <?php endif?>
 

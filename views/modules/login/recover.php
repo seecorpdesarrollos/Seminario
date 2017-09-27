@@ -8,35 +8,34 @@
 </nav>
 <br/>
 <div class="card text-center">
-    <div class="card-header">
+    <div class="card-header text-danger">
         <?php if (isset($_GET['action'])): ?>
-        <?php if ($_GET['action'] == 'errorIngreso'): ?>
-        <div class="alert alert-danger fade show" role="alert">
+        <?php if ($_GET['action'] == 'noEmail'): ?>
+        <div class="alert alert-warning fade show" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">
                     &times;
                 </span>
             </button>
-            El correo electrónico y la contraseña que ingresaste no coinciden con nuestros registros. Por favor, revisa e inténtalo de nuevo..
+           <strong>Error: </strong> Este email no corresponde a un usuario. Por favor verifique su el email ingresado.
         </div>
         <?php endif?>
 
         <?php endif?>
+      Recupera tu contraseña
     </div>
     <div class="card-block">
         <h4 class="card-title">
-            Inicia sesión en Mermorium.
+           <i class="fa fa-message"></i> Ingresa tu correo
         </h4>
         <section class="heads">
             <form method="post" id="form">
                 <div class="form-group">
                     <input type="text" class="form-control" id="emailUser" name="emailUser" placeholder="Correo de Usuario" autofocus=""/>
                 </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="passwordUser" name="passwordUser" placeholder="Contraseña " value=""/>
-                </div>
+
 <?php $registro = new loginUsuarioCon;
-$registro->ingresoUsarioErrorController();
+$registro->recoverPassController();
 ?>
                 <?php if (!isset($_SESSION['emailUser'])): ?>
                    <?php include 'btnError.php';?>
