@@ -12,6 +12,10 @@
     cursor: pointer;
 }
 
+.center {
+    margin-left: 41%;
+}
+
 #tablas {
     width: 107% !important;
     margin-left: -32px;
@@ -166,7 +170,22 @@ hr {
     background: linear-gradient(to bottom, #FEE24F, #F4BB2F);
 }
 
+.titulo {
+    font-size: 29px;
+    color: #535252;
+    margin-bottom: 2px;
+}
 
+.parrafo {
+    color: #EB4747;
+    border-bottom: 1px dotted #595959;
+}
+
+#output {
+    padding: 10px;
+    border: 2px solid #d0d0d0d0;
+    border-radius: 4px;
+    box-shadow: 0 0 8px #d0d0d0;
 }
 
 @media (max-width: 700px) {
@@ -176,4 +195,7 @@ hr {
     .list-group, .list-group-item, .row, .file, .table {
         width: 100%;
     }
+}
+
+
 }

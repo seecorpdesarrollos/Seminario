@@ -80,11 +80,7 @@ foreach ($res as $key) {
                                        <i class="fa fa-list-alt text-danger"></i> Temas
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="buscar">
-                                       <i class="fa fa-search text-danger"></i> Buscar
-                                    </a>
-                                </li>
+
                                  <li>
                                     <a href="wiki">
                                        <i class="fa fa-wikipedia-w text-danger"></i> Wikipedia

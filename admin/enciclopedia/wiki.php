@@ -38,9 +38,89 @@ if (!isset($_SESSION['emailUser'])) {
                     </header>
                     <!-- Dashboard Counts Section-->
                     <section class="dashboard-counts no-padding-bottom">
-                        <div class="container-fluid">
+                        <div class="container-fluid" >
                             <div class="row bg-white has-shadow">
+                                <div class="col-sm-12 ">
+               <ol class="breadcrumb">
+                <li class="breadcrumb-item active center">Realice su búsqueda</li>
+               </ol>
+<br>
+<div class="input-group margin-bottom-sm">
+  <span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
+  <input class="form-control " id="searchTerm"  name="search" type="text" placeholder="Buscar.......">
+  <button id='search' type="button" class ="btn btn-outline-primary busqueda"><span>
+  <i class="fa fa-search" aria-hidden="true"></i>
+</span> Buscar
+</button>
+</div>
 
+<br>
+<br>
+
+  <div id="outputs"></div>
+  <div id="output"></div>
+</div>
+
+
+<script type="text/javascript">
+  $(function() {
+    // enter
+    $("#searchTerm").keypress(function(e) {
+        if (e.keyCode === 13) {
+            var searchTerm = $("#searchTerm").val();
+              searchTerms = searchTerm.toUpperCase();
+            var url = "https://es.wikipedia.org/w/api.php?action=opensearch&search=" + searchTerm + "&format=json&callback=?";
+             $("#outputs").html("<span class='titulo'>El resultado de la búsqueda:" + " " + searchTerms +"</span>");
+            $.ajax({
+                url: url,
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function(data, status, jqXHR) {
+                    console.log(data);
+                    $("#output").html();
+                    for (var i = 0; i < data[1].length; i++) {
+                    $("#output").prepend("<div><div class=''><a target='_blank'  href=" + data[3][i] + "><span class='titulo'>" + data[1][i] + "</span>" + "<p class='parrafo'>" + data[2][i] + "</p></a></div></div>");
+                }
+                }
+            })
+        }
+    });
+    // click ajax call
+    $(".busqueda").on("click", function() {
+        var searchTerm = $("#searchTerm").val();
+              searchTerms = searchTerm.toUpperCase();
+        var url = "https://es.wikipedia.org/w/api.php?action=opensearch&search=" + searchTerm + "&format=json&callback=?";
+        $("#outputs").html("<span class='titulo'>El resultado de la búsqueda:" + " " + searchTerms +"</span>");
+        $.ajax({
+            url: url,
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            dataType: "json",
+            // plop data
+            success: function(data, status, jqXHR) {
+                console.log(data);
+                $("#output").html();
+                for (var i = 0; i < data[1].length; i++) {
+                    $("#output").prepend("<div><div class=''><a target='_blank'  href=" + data[3][i] + "><span class='titulo'>" + data[1][i] + "</span>" + "<p class='parrafo'>" + data[2][i] + "</p></a></div></div>");
+                }
+            }
+        }).done(function() {
+            console.log("success");
+        }).fail(function() {
+            console.log("error");
+        }).always(function() {
+            console.log("complete");
+        });
+    });
+});
+
+
+
+
+</script>
                             </div>
                         </div>
                     </section>
